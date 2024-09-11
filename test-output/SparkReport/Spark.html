@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 11, 2024 08:22:47 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 12, 2024 01:17:17 AM</span></a>
 </li>
 </ul>
 </div>
@@ -97,7 +97,7 @@
           <div class="test-detail">
             <p class="name">Verify The functionalities Ride List</p>
             <p class="text-sm">
-              <span>8:22:48 PM</span> / <span>00:01:09:664</span>
+              <span>1:17:18 AM</span> / <span>00:00:47:800</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -106,9 +106,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Verify The functionalities Ride List</h5>
-<span class='badge badge-success'>09.11.2024 8:22:48 PM</span>
-<span class='badge badge-danger'>09.11.2024 8:23:58 PM</span>
-<span class='badge badge-default'>00:01:09:664</span>
+<span class='badge badge-success'>09.12.2024 1:17:18 AM</span>
+<span class='badge badge-danger'>09.12.2024 1:18:06 AM</span>
+<span class='badge badge-default'>00:00:47:800</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -121,9 +121,6 @@
     <div class="card-header" role="tab">
       <div class="card-title">
         <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify the future rides dates are greater than now</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
       </div>
     </div>
         <div class="">
@@ -138,40 +135,19 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
+              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
                 <span>When I select country code as "USA"</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "1234567890"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="sms-login" class="confirm-button input-disabled cp">...</button> is not clickable at point (759, 655). Other element would receive the click: <div class="modal-content login-area">...</div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=122.0.6261.95)
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [11df59371b1e97c06cff62a5d8abad2a, clickElement {id=f.EF21056F59F53ACB510CD3CA3E6BFFAE.d.A63B251E9F8121CEC6149E14B23FA2ED.e.65}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49749/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (11df59371b1e97c06cff62a5d8abad2a)] -> id: sms-login]
-Session ID: 11df59371b1e97c06cff62a5d8abad2a
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+Command: [24d05fe935306159c1c486e049923586, findElement {using=id, value=country-codes-input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63427}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63427/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24d05fe935306159c1c486e049923586
+	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -181,31 +157,76 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy30.click(Unknown Source)
-	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:97)
-	at com.Elife.PageComponent.LoginPage.clickOnLoginBtn(LoginPage.java:57)
-	at com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton(LoginPageSteps.java:41)
-	at ✽.I click on Login button(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideList.feature:70)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy30.toString(Unknown Source)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:136)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:298)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:136)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.Elife.Utilities.Utils.waitForVisibility(Utils.java:59)
+	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:96)
+	at com.Elife.PageComponent.LoginPage.selectCountryCode(LoginPage.java:30)
+	at com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(LoginPageSteps.java:20)
+	at ?.I select country code as "USA"(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideList.feature:66)
 </textarea>
       
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
+              <div class="step fail-bg" title="AFTER_STEP">
                 <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726066437182.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded1.png' src="../embedded1.png">
-    
-    </div></div>
-</div>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.95)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [24d05fe935306159c1c486e049923586, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63427}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63427/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24d05fe935306159c1c486e049923586
+	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:331)
+	at com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(Common_Step_Definitions.java:68)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
+                <span>When I enter cell number as "1234567890"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
+                <span>And I click on Get Verification Code Link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
+                <span>And I click on Service agreement checkbox</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
+                <span>Then I click on Login button</span>
+      <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" title="com.Elife.StepDefinitions.RiseListSteps.verifyTheDatesWhichIsGreaterThanNow()">
@@ -239,15 +260,15 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">org.openqa.selenium.NoSuchWindowException</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>org.openqa.selenium.NoSuchWindowException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -260,11 +281,21 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:23:54 PM</td>
+<td>01:17:49 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='16'>Then I click on Login button</a>
+<a href="#" class="linked" test-id='1' id='8'>When I select country code as "USA"</a>
 <div class="">
-<span class="badge badge-default">Verify The functionalities Ride List.Verify the future rides dates are greater than now.Then I click on Login button</span>
+<span class="badge badge-default">Verify The functionalities Ride List.Verify the future rides dates are greater than now.When I select country code as "USA"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:18:05 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">Verify The functionalities Ride List.Verify the future rides dates are greater than now.com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
 </div>
 </td>
 </tr>
@@ -312,7 +343,7 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:22:48 PM</td>
+<td>01:17:18 AM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Verify the future rides dates are greater than now</a>
 <div class="">
@@ -337,13 +368,13 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 11, 2024 08:22:47 PM</h3>
+<h3>Sep 12, 2024 01:17:17 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 11, 2024 08:23:58 PM</h3>
+<h3>Sep 12, 2024 01:18:06 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -414,10 +445,10 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='77%'><b>7</b> steps passed</small></div>
+<div><small data-tooltip='22%'><b>2</b> steps passed</small></div>
 <div>
-<small data-tooltip='11%'><b>1</b> steps failed,
-<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='22%'><b>2</b> steps failed,
+<b>5</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -433,7 +464,7 @@ Session ID: 11df59371b1e97c06cff62a5d8abad2a
 </div></div>
 <script>
 var timeline = {
-"Verify The functionalities Ride List":69.664
+"Verify The functionalities Ride List":47.8
 };
 </script>
 <div class="row">
@@ -470,10 +501,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 7,
-failGrandChild: 1,
+passGrandChild: 2,
+failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 1,
+skipGrandChild: 5,
 infoGrandChild: 0,
 eventsCount: 5,
 };

@@ -1,19 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: com.Elife.Runner.Test_Runner
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 39.75 sec <<< FAILURE!
-Verify Create ride with all fields(Verify The functionalities of One way ride)  Time elapsed: 38.292 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 56.268 sec <<< FAILURE!
+Verify the future rides dates are greater than now(Verify The functionalities Ride List)  Time elapsed: 48.131 sec  <<< ERROR!
 org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=122.0.6261.95)
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b8ed8f21f3aecb18fe028081e4d5a568, findElements {using=css selector, value=frame[name='front\-inc'],iframe[name='front\-inc']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51748/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b8ed8f21f3aecb18fe028081e4d5a568
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+Command: [24d05fe935306159c1c486e049923586, findElement {using=id, value=country-codes-input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63427}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63427/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24d05fe935306159c1c486e049923586
+	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -23,26 +22,36 @@ Session ID: b8ed8f21f3aecb18fe028081e4d5a568
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
-	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:372)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1056)
-	at com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl(HomePageSteps.java:17)
-	at ✽.I open bus bound url(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/OneWay.feature:4)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy30.toString(Unknown Source)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:136)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:298)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:136)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.Elife.Utilities.Utils.waitForVisibility(Utils.java:59)
+	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:96)
+	at com.Elife.PageComponent.LoginPage.selectCountryCode(LoginPage.java:30)
+	at com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(LoginPageSteps.java:20)
+	at ✽.I select country code as "USA"(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideList.feature:66)
 
-Verify Create ride with all fields(Verify The functionalities of One way ride)  Time elapsed: 38.293 sec  <<< ERROR!
+Verify the future rides dates are greater than now(Verify The functionalities Ride List)  Time elapsed: 48.164 sec  <<< ERROR!
 org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=122.0.6261.95)
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b8ed8f21f3aecb18fe028081e4d5a568, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51748/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b8ed8f21f3aecb18fe028081e4d5a568
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+Command: [24d05fe935306159c1c486e049923586, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63427}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63427/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24d05fe935306159c1c486e049923586
+	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -55,5 +64,5 @@ Session ID: b8ed8f21f3aecb18fe028081e4d5a568
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
 	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:331)
-	at com.Elife.StepDefinitions.Common_Step_Definitions.afterScenario(Common_Step_Definitions.java:61)
+	at com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(Common_Step_Definitions.java:68)
 
