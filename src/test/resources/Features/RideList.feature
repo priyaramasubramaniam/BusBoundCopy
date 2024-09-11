@@ -82,8 +82,8 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify More link is displayed in the Ride Confirmation Page
     Given I click on my ride link
-    When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I select country code as "USA"
+    When I enter cell number as "1234567890"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
