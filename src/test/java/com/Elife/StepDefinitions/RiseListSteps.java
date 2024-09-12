@@ -52,8 +52,8 @@ public class RiseListSteps {
       }
 
 
-      @And("I click on the ride link")
-      public void iClickOnTheRideLink() {
+      @And("I click on the ride id link")
+      public void iClickOnTheRideIdLink() {
             RideListPage.getInstance().clickOnRideIdLink();
       }
 

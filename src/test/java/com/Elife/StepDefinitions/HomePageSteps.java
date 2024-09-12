@@ -32,6 +32,10 @@ public class HomePageSteps {
       public void iClickOnMyRideLink() throws IOException {
             HomePage.getInstance().displayHeader();
             HomePage.getInstance().clickOnMyRidesBtn();
+
+      }
+      @Given("I click on my ride link from the dropdown")
+      public void iClickOnMyRideLinkFromTheDropdown() {
             HomePage.getInstance().clickOnDDMyRides();
       }
 
@@ -40,4 +44,6 @@ public class HomePageSteps {
       public void iOpenRideConfirmationPageUrl(String url) {
             DriverManager.getDriver().get(url);
       }
+
+
 }
