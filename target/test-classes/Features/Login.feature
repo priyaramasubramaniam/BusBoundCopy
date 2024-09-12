@@ -1,7 +1,7 @@
 Feature: Verify The functionalities Login
   Background: This will click on my ride link
     Given I open bus bound url
-#    Given I click on my ride link
+    Given I click on my ride link
 
   Scenario: Verify the login with Existing Number
     Given I select country code as "+91"
@@ -80,7 +80,7 @@ Feature: Verify The functionalities Login
     And I click on my ride link
     Then Verify the logout button is displayed
     Then I click on the logout link
-@1
+
   Scenario: Verify the My ride dropdown after login
     Given I select country code as "+91"
     When I enter cell number as "9750359643"

@@ -28,6 +28,11 @@ public class HomePage {
       {
             Utils.clickOnElement(linkMyRides);
       }
+      @FindBy(xpath = "//div[@id='my-rides-dropdown-content']//a[@id='my-ride']") private WebElement DDMyRides;
+      public void clickOnDDMyRides()
+      {
+            Utils.clickOnElement(DDMyRides);
+      }
       @FindBy(xpath = "//div[@id='my-rides-dropdown-content']//a") private List<WebElement> linksMyRideDD;
       public List<String> getMyRideListDD() {
             List<String> values = new ArrayList<>();

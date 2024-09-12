@@ -32,7 +32,7 @@ public class HomePageSteps {
       public void iClickOnMyRideLink() throws IOException {
             HomePage.getInstance().displayHeader();
             HomePage.getInstance().clickOnMyRidesBtn();
-            DriverManager.getDriver().get(Utils.getGlobalValue("URL_My_Rides"));
+            HomePage.getInstance().clickOnDDMyRides();
       }
 
 

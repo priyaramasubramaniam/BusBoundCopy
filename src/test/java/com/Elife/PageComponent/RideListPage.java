@@ -183,7 +183,6 @@ public class RideListPage {
                         return false;  // Return false if dates are not in descending order
                   }
             }
-
             System.out.println(dateList);
             return true;  // Return true if all dates are in descending order
       }

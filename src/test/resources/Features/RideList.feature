@@ -4,6 +4,7 @@ Feature: Verify The functionalities Ride List
 #    Then I switch to frame
 
   Scenario: Verify the Past and Future switch button is present in the Ride List page
+    Given I click on my ride link
     When I select country code as "+91"
     When I enter cell number as "9750359643"
     And I click on Get Verification Code Link
@@ -12,7 +13,7 @@ Feature: Verify The functionalities Ride List
     And I verify the Future and Past switch should be displayed in Ride List page
 
   Scenario: Verify the Ride is redirected to right Right confirmation page
-#    Given I click on my ride link
+    Given I click on my ride link
     When I select country code as "+91"
     When I enter cell number as "9750359643"
     And I click on Get Verification Code Link
@@ -31,7 +32,7 @@ Feature: Verify The functionalities Ride List
     And I click on Service agreement checkbox
     Then I click on Login button
     And Verify the future orders are in ascending order
-@1
+
   Scenario: Verify the past rides are in descending order
     Given I click on my ride link
     When I select country code as "+91"
@@ -43,7 +44,7 @@ Feature: Verify The functionalities Ride List
     And Verify the part orders are in ascending order
 
   Scenario: Verify the future page contains only 5 records
-#    Given I click on my ride link
+    Given I click on my ride link
     When I select country code as "+91"
     When I enter cell number as "9750359643"
     And I click on Get Verification Code Link
@@ -52,7 +53,7 @@ Feature: Verify The functionalities Ride List
     And Verify the each page contains lesser than or equal to 5 records
 
   Scenario: Verify the past page contains only 5 records
-#    Given I click on my ride link
+    Given I click on my ride link
     When I select country code as "+91"
     When I enter cell number as "9750359643"
     And I click on Get Verification Code Link
@@ -69,7 +70,7 @@ Feature: Verify The functionalities Ride List
     And I click on Service agreement checkbox
     Then I click on Login button
     And Verify the dates which is greater than now
-@1
+
   Scenario: Verify the past rides dates are lesser than now
     Given I click on my ride link
     When I select country code as "USA"
