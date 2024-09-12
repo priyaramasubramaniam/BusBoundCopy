@@ -11,7 +11,7 @@ Feature: Verify The functionalities Login
     And I click on Service agreement checkbox
     Then I click on Login button
     And Verify the User is redirected to my rides list page
-@1
+  @1
   Scenario: Verify the login with Non Existing Number
     Given I click on my ride link from the dropdown
     Given I select country code as "+91"
