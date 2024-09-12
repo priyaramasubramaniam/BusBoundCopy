@@ -31,7 +31,7 @@ Feature: Verify The functionalities Ride List
     And I click on Service agreement checkbox
     Then I click on Login button
     And Verify the future orders are in ascending order
-@1
+
   Scenario: Verify the past rides are in descending order
     Given I click on my ride link
     When I select country code as "+91"

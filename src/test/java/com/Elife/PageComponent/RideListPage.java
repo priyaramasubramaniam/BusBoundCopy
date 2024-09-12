@@ -194,27 +194,26 @@ public class RideListPage {
 
             while (true) {
                   for (WebElement element : textDateTime) {
+                        // Extract only the date and time part before '·'
                         String dateString = element.getText().split("·")[0].trim();
+                        // Parse the extracted date string
                         LocalDateTime parsedDateTime = LocalDateTime.parse(dateString, formatter);
 
                         // Check if parsed date-time is after the current time
                         if (!parsedDateTime.isAfter(LocalDateTime.now())) {
                               return false;  // Return false if any date-time is not greater than now
                         }
-
-                        dateList.add(parsedDateTime);  // Optionally collect the date-times for debugging/logging
+                        dateList.add(parsedDateTime);  // Collect date-times for debugging/logging
                   }
 
                   // Exit if no next page button or it is not enabled
                   if (!btnNextPage.isDisplayed() || !btnNextPage.isEnabled()) {
                         break;
                   }
-
                   // Navigate to the next page
                   btnNextPage.click();
                   Thread.sleep(3000);  // Add a wait to ensure the page loads properly
             }
-
             System.out.println(dateList);  // Print the collected dates for verification
             return true;  // Return true if all date-times are greater than now
       }
