@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features/Login.feature",
         glue = "com.Elife.StepDefinitions",
         dryRun = false,
-//        tags = "@1",
+        tags = "@1",
         monochrome = true,
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
