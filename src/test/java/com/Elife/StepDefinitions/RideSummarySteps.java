@@ -17,30 +17,21 @@ import java.util.List;
 public class RideSummarySteps {
       @Then("Verify the Ride dates with actual dates")
       public void verifyTheRideDatesWithActualDates() {
-            System.out.println(ItineraryPage.getInstance().getDates());
-            System.out.println(RideSummaryPage.getInstance().getRideDates());
             Assert.assertEquals(ItineraryPage.getInstance().getDates(), RideSummaryPage.getInstance().getRideDates());
       }
 
       @And("Verify the Ride dates for each days")
       public void verifyTheRideDatesForEachDays() throws InterruptedException {
-            System.out.println(ItineraryPage.getInstance().getRideDateForEachDay());
-            System.out.println(RideSummaryPage.getInstance().getRideDateForEachDay());
-//            assert ItineraryPage.getInstance().getRideDateForEachDay().equals(RideSummaryPage.getInstance().getRideDateForEachDay());
             Assert.assertEquals(ItineraryPage.getInstance().getRideDateForEachDay(), RideSummaryPage.getInstance().getRideDateForEachDay());
       }
 
       @And("Verify the Ride Time for each days")
       public void verifyTheRideTimeForEachDays() throws InterruptedException {
-            System.out.println(ScenarioContext.getContext("PICKUP_TIMES"));
-            System.out.println(RideSummaryPage.getInstance().getRideTimes());
             Assert.assertEquals(ScenarioContext.getContext("PICKUP_TIMES"), RideSummaryPage.getInstance().getRideTimes());
       }
 
       @And("Verify the Ride locations for each days")
       public void verifyTheRideLocationsForEachDays() throws InterruptedException {
-            System.out.println(RideSummaryPage.getInstance().getRideLocations());
-            System.out.println(ItineraryPage.getInstance().getLocations());
             Assert.assertEquals(RideSummaryPage.getInstance().getRideLocations(),
                     ItineraryPage.getInstance().getLocations());
 
@@ -98,6 +89,11 @@ public class RideSummarySteps {
                     ScenarioContext.getContext("vehicleMaxLux"));
       }
 
+      @And("Verify the vehicle Service price in ride summary page")
+      public void verifyTheVehicleServicePriceInRideSummaryPage() {
+            Assert.assertEquals(RideSummaryPage.getInstance().getVehiclePrice(), ScenarioContext.getContext("vehiclePrice"));
+      }
+
       @And("Verify the Contact information in ride summary page")
       public void verifyTheContactInformationInRideSummaryPage() {
             Assert.assertEquals(RideSummaryPage.getInstance().getName(),
@@ -117,7 +113,7 @@ public class RideSummarySteps {
       @And("I click on the payment link")
       public void iClickOnThePaymentLink() throws InterruptedException {
             RideSummaryPage.getInstance().clickOnPaymentBtn();
-            Utils.implicitWait(40);
+            Utils.implicitWait(50);
       }
 
       @Then("I do the payment")
@@ -153,10 +149,6 @@ public class RideSummarySteps {
       public void verifyTheMeetAndGreetPriceShouldNotBeDisplayedInTheRideSummaryPage() {
             Assert.assertEquals(RideSummaryPage.getInstance().isMeetAndGreetPriceDisplayed(), true);
       }
-
-
-
-
 
 
 

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 12, 2024 06:55:15 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 14, 2024 11:47:57 PM</span></a>
 </li>
 </ul>
 </div>
@@ -47,9 +47,9 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -71,33 +71,39 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@1</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Verify The functionalities Login</p>
+            <p class="name">Verify The functionalities of One way ride</p>
             <p class="text-sm">
-              <span>6:55:16 PM</span> / <span>00:10:47:229</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>11:47:58 PM</span> / <span>00:00:48:543</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Verify The functionalities Login</h5>
-<span class='badge badge-success'>09.12.2024 6:55:16 PM</span>
-<span class='badge badge-danger'>09.12.2024 7:06:03 PM</span>
-<span class='badge badge-default'>00:10:47:229</span>
+<h5 class="test-status text-pass">Verify The functionalities of One way ride</h5>
+<span class='badge badge-success'>09.14.2024 11:47:58 PM</span>
+<span class='badge badge-danger'>09.14.2024 11:48:46 PM</span>
+<span class='badge badge-default'>00:00:48:543</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -109,7 +115,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify the login with Existing Number</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify contact form is displayed when the vehicle is not available</div>
       </div>
     </div>
         <div class="collapse">
@@ -119,831 +125,51 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iSwitchToFrame()">
+                <span>When I switch to frame</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iSetPassengerCountAs(java.lang.String)">
+                <span>Given I set passenger count as "25"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iSetLuggageCountAs(java.lang.String)">
+                <span>When I set luggage count as "18"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnEventType()">
+                <span>And I click on event type</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.userSelectsTheEventTypeAs(java.lang.String)">
+                <span>And User selects the event type as "Wedding"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheUserIsRedirectedToMyRidesListPage()">
-                <span>And Verify the User is redirected to my rides list page</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>Verify the login with Non Existing Number</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "8825884999"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheNoRidesFoundPopUpWindowIsDisplayed()">
-                <span>Then Verify the No Rides found pop up window is displayed</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheNoRidesFoundPopUpWindowTitleAndDescriptionAsAnd(java.lang.String,java.lang.String)">
-                <span>Then Verify the No Rides found pop up window Title and Description as "No ride order found" and "Sorry, you haven’t book a ride with us. Ride with BusBound Now!"</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>Verify the login with Non Existing number, The Price quote btn is redirects to quotes page</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "8825884999"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheNoRidesFoundPopUpWindowIsDisplayed()">
-                <span>Then Verify the No Rides found pop up window is displayed</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetAPriceQuoteButtonInThePopUp()">
-                <span>Then I click on Get a price Quote button in the pop up</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyThePageIsRedirectToPriceQuotePageAndVerifyTheUrlAs(java.lang.String)">
-                <span>And Verify the page is redirect to price quote page and verify the url as "https://busbound.com/quotes/"</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="60"><span class="badge log pass-bg mr-2">Pass</span>Verify the login with Non Existing number, The close button closes the pop up</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "8825884999"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheNoRidesFoundPopUpWindowIsDisplayed()">
-                <span>Then Verify the No Rides found pop up window is displayed</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyThePopUpIsClosedWhenClickingOnCloseButton()">
-                <span>And Verify the pop up is closed when clicking on close button</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="78"><span class="badge log fail-bg mr-2">Fail</span>Verify the login with Invalid Number</div>
-      </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "878888888111"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheErrorMessage(java.lang.String)">
-                <span>Then Verify the error message "wrong cell phone number."</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.95)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9f728815cef1e1dea183ad2b427eedb3, findElement {using=id, value=error-msg}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55642}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55642/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9f728815cef1e1dea183ad2b427eedb3
-	at sun.reflect.GeneratedConstructorAccessor25.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy30.toString(Unknown Source)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:136)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.toString(ExpectedConditions.java:298)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:136)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at com.Elife.Utilities.Utils.waitForVisibility(Utils.java:59)
-	at com.Elife.Utilities.Utils.getWebElementText(Utils.java:213)
-	at com.Elife.PageComponent.LoginPage.getErrorMsg(LoginPage.java:62)
-	at com.Elife.StepDefinitions.LoginPageSteps.verifyTheErrorMessage(LoginPageSteps.java:52)
-	at ✽.Verify the error message "wrong cell phone number."(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:40)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step fail-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=122.0.6261.95)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9f728815cef1e1dea183ad2b427eedb3, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55642}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55642/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9f728815cef1e1dea183ad2b427eedb3
-	at sun.reflect.GeneratedConstructorAccessor25.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:331)
-	at com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(Common_Step_Definitions.java:68)
-</textarea>
-      
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="94"><span class="badge log fail-bg mr-2">Fail</span>Verify the login with invalid verification code</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="sms-login" class="confirm-button input-disabled cp">...</button> is not clickable at point (759, 655). Other element would receive the click: <div class="modal-content login-area">...</div>
-  (Session info: chrome=122.0.6261.95)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [13f3d8da39f34543cb2267eaea84dbbf, clickElement {id=f.14AD67CA6460074E99A6182A063371F0.d.C82A15BD43663463A9557AFFAFCC77D1.e.67}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55749/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (13f3d8da39f34543cb2267eaea84dbbf)] -> id: sms-login]
-Session ID: 13f3d8da39f34543cb2267eaea84dbbf
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy30.click(Unknown Source)
-	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:97)
-	at com.Elife.PageComponent.LoginPage.clickOnLoginBtn(LoginPage.java:57)
-	at com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton(LoginPageSteps.java:41)
-	at ✽.I click on Login button(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:47)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726147866612.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded1.png' src="../embedded1.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheErrorMessage(java.lang.String)">
-                <span>Then Verify the error message "Incorrect SMS code, please try again."</span>
-      <div>Step skipped
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="114"><span class="badge log fail-bg mr-2">Fail</span>Verify the login without click on service checkbox</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.theUserEntersTheTripDetailsIntoTheInputFields(io.cucumber.datatable.DataTable)">
+                <span>When the user enters the trip details into the input fields</span>
+      <div><table class='markup-table table '><tr><td>Field</td><td>Value 1</td><td>Value 4</td></tr><tr><td>Location</td><td>Chennai International Airport, Chennai</td><td>Chennai, Tamil Nadu, India</td></tr><tr><td>Day</td><td>23</td><td></td></tr><tr><td>Month</td><td>October</td><td></td></tr><tr><td>Year</td><td>2024</td><td></td></tr><tr><td>Hour</td><td>08</td><td></td></tr><tr><td>Minute</td><td>30</td><td></td></tr><tr><td>Period</td><td>AM</td><td></td></tr></table>
       </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnNextButtonInItineraryPage()">
+                <span>And I click on next button in itinerary page</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="header"]/div/div"}
-  (Session info: chrome=122.0.6261.95)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [03701060e2cfb87d0fc837312854dbbd, findElement {using=xpath, value=//*[@id="header"]/div/div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55893}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55893/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 03701060e2cfb87d0fc837312854dbbd
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.Elife.PageComponent.HomePage.displayHeader(HomePage.java:68)
-	at com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink(HomePageSteps.java:33)
-	at ✽.I click on my ride link(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:4)
-</textarea>
-      
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726147897324.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded2.png' src="../embedded2.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.QuotesPageSteps.verifyTheTitleOfTheQuotePageAs(java.lang.String)">
+                <span>Then Verify the title of the quote page as "Get a Price Quote"</span>
       <div>
       </div>
               </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheErrorMessage(java.lang.String)">
-                <span>Then Verify the error message "Please check the box if you want to proceed."</span>
-      <div>Step skipped
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="132"><span class="badge log pass-bg mr-2">Pass</span>Verify the privacy policy and service policy redirects to right pages</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnThePrivacyPolicyLink()">
-                <span>Given I click on the privacy policy link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iVerifyTheUrl(java.lang.String)">
-                <span>Then I verify the url "https://busbound.com/privacy-policy/"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnTheServiceAgreementLink()">
-                <span>And I click on the service agreement link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iVerifyTheUrl(java.lang.String)">
-                <span>And I verify the url "https://busbound.com/terms-and-conditions/"</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="148"><span class="badge log fail-bg mr-2">Fail</span>Verify the Logout is displayed after successful login</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="sms-login" class="confirm-button input-disabled cp">...</button> is not clickable at point (759, 655). Other element would receive the click: <div class="modal-content login-area">...</div>
-  (Session info: chrome=122.0.6261.95)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [469942299484aac506b2a05850c73d00, clickElement {id=f.BA9A6BDCBB791AD89111F20EF8491A24.d.4688049CC40B90939715C854E73DDB7B.e.35}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56078}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56078/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (469942299484aac506b2a05850c73d00)] -> id: sms-login]
-Session ID: 469942299484aac506b2a05850c73d00
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy30.click(Unknown Source)
-	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:97)
-	at com.Elife.PageComponent.LoginPage.clickOnLoginBtn(LoginPage.java:57)
-	at com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton(LoginPageSteps.java:41)
-	at ✽.I click on Login button(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:68)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726147999652.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded3.png' src="../embedded3.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheUserIsRedirectedToMyRidesListPage()">
-                <span>And Verify the User is redirected to my rides list page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>And I click on my ride link</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheLogoutButtonIsDisplayed()">
-                <span>Then Verify the logout button is displayed</span>
-      <div>Step skipped
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="172"><span class="badge log fail-bg mr-2">Fail</span>Verify the Logout is working</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheUserIsRedirectedToMyRidesListPage()">
-                <span>And Verify the User is redirected to my rides list page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>And I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheLogoutButtonIsDisplayed()">
-                <span>Then Verify the logout button is displayed</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (c40230ca2bae89ae472995ff4d744968)] -> xpath: //*[@id="my-rides-dropdown-content"]/a[@id='my-ride-logout']] (tried for 40 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56191}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56191/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c40230ca2bae89ae472995ff4d744968
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.Elife.Utilities.Utils.waitForVisibilitySec(Utils.java:54)
-	at com.Elife.Utilities.Utils.checkIfElementIsDisplayed(Utils.java:71)
-	at com.Elife.PageComponent.HomePage.isLogoutLinkDisplayed(HomePage.java:48)
-	at com.Elife.StepDefinitions.LoginPageSteps.verifyTheLogoutButtonIsDisplayed(LoginPageSteps.java:101)
-	at ✽.Verify the logout button is displayed(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:81)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726148109636.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded4.png' src="../embedded4.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnTheLogoutLink()">
-                <span>Then I click on the logout link</span>
-      <div>Step skipped
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="198"><span class="badge log fail-bg mr-2">Fail</span>Verify the My ride dropdown after login</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
-                <span>Given I open bus bound url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>Given I click on my ride link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iSelectCountryCodeAs(java.lang.String)">
-                <span>Given I select country code as "+91"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iEnterCellNumberAs(java.lang.String)">
-                <span>When I enter cell number as "9750359643"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnGetVerificationCodeLink()">
-                <span>And I click on Get Verification Code Link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnServiceAgreementCheckbox()">
-                <span>And I click on Service agreement checkbox</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton()">
-                <span>Then I click on Login button</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="sms-login" class="confirm-button input-disabled cp">...</button> is not clickable at point (759, 655). Other element would receive the click: <div class="modal-content login-area">...</div>
-  (Session info: chrome=122.0.6261.95)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'PRIYA', ip: '192.168.1.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0a9badd3111f35aa9f68cabcfd7d0d95, clickElement {id=f.07D910AC224FC05C7C0A6345CADA2F27.d.1BBFE1AAA9663292F29D9D114E598E02.e.68}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56362}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56362/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (0a9badd3111f35aa9f68cabcfd7d0d95)] -> id: sms-login]
-Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy30.click(Unknown Source)
-	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:97)
-	at com.Elife.PageComponent.LoginPage.clickOnLoginBtn(LoginPage.java:57)
-	at com.Elife.StepDefinitions.LoginPageSteps.iClickOnLoginButton(LoginPageSteps.java:41)
-	at ✽.I click on Login button(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/Login.feature:89)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1726148162352.png
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded5.png' src="../embedded5.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.QuotesPageSteps.verifyTheSubTitleOfTheQuotePageAs(java.lang.String)">
+                <span>Then Verify the sub title of the quote page as "Please fill in your contact information so we can reach out to you and send you the quote."</span>
       <div>
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheUserIsRedirectedToMyRidesListPage()">
-                <span>And Verify the User is redirected to my rides list page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.HomePageSteps.iClickOnMyRideLink()">
-                <span>And I click on my ride link</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="com.Elife.StepDefinitions.LoginPageSteps.verifyTheDropdownValuesAs(java.lang.String)">
-                <span>Then Verify the dropdown values as "My Rides, Logout"</span>
-      <div>Step skipped
       </div>
               </div>
           </div>
@@ -961,128 +187,26 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>3</span>
+<span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
-<p class="duration text-sm">3 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
-<span status="fail" class='badge log badge-danger'>3 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:01:03 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='108'>Then I click on Login button</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the login with invalid verification code.Then I click on Login button</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:03:18 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='162'>Then I click on Login button</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the Logout is displayed after successful login.Then I click on Login button</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:06:00 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='212'>Then I click on Login button</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the My ride dropdown after login.Then I click on Login button</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>2</span>
-</span>
-<p class="name">org.openqa.selenium.NoSuchWindowException</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.NoSuchWindowException</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>18:59:52 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='90'>Then Verify the error message "wrong cell phone number."</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the login with Invalid Number.Then Verify the error message "wrong cell phone number."</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:00:03 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='91'>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the login with Invalid Number.com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="name">@1</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchElementException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>@1</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1093,49 +217,13 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:01:36 PM</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:47:58 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='118'>Given I click on my ride link</a>
+<a href="#" class="linked" test-id='1' id='2'>Verify contact form is displayed when the vehicle is not available</a>
 <div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the login without click on service checkbox.Given I click on my ride link</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.openqa.selenium.TimeoutException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.TimeoutException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:04:29 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='192'>Then Verify the logout button is displayed</a>
-<div class="">
-<span class="badge badge-default">Verify The functionalities Login.Verify the Logout is working.Then Verify the logout button is displayed</span>
+<span class="badge badge-default">Verify The functionalities of One way ride.Verify contact form is displayed when the vehicle is not available</span>
 </div>
 </td>
 </tr>
@@ -1156,25 +244,25 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 12, 2024 06:55:15 PM</h3>
+<h3>Sep 14, 2024 11:47:57 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 12, 2024 07:06:03 PM</h3>
+<h3>Sep 14, 2024 11:48:46 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -1190,12 +278,12 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> features passed
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>1</b> features failed,
+<small data-tooltip='0%'><b>0</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -1213,9 +301,9 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='45%'><b>5</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='54%'><b>6</b> scenarios failed,
+<small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -1233,10 +321,10 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='78%'><b>74</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>10</b> steps passed</small></div>
 <div>
-<small data-tooltip='7%'><b>7</b> steps failed,
-<b>13</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -1252,30 +340,47 @@ Session ID: 0a9badd3111f35aa9f68cabcfd7d0d95
 </div></div>
 <script>
 var timeline = {
-"Verify The functionalities Login":647.229
+"Verify The functionalities of One way ride":48.543
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 </div>
 </div>
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 1,
+passParent: 1,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 5,
-failChild: 6,
+passChild: 1,
+failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 74,
-failGrandChild: 7,
+passGrandChild: 10,
+failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 13,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };

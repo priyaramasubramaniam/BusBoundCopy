@@ -52,6 +52,8 @@ public class LoginPageSteps {
             Assert.assertEquals(error_msg, LoginPage.getInstance().getErrorMsg());
       }
 
+
+
       @Then("Verify the No Rides found pop up window is displayed")
       public void verifyTheNoRidesFoundPopUpWindowIsDisplayed() {
             Assert.assertTrue(LoginPage.getInstance().isPopupDisplayed());
@@ -112,4 +114,6 @@ public class LoginPageSteps {
             List<String> dropdownList = Arrays.asList(values.split(", "));
             Assert.assertEquals(dropdownList, HomePage.getInstance().getMyRideListDD());
       }
+
+
 }

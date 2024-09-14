@@ -11,7 +11,13 @@ Feature: Verify The functionalities Login
     And I click on Service agreement checkbox
     Then I click on Login button
     And Verify the User is redirected to my rides list page
+
   @1
+  Scenario: Verify the Error message for without country code
+    Given I click on my ride link from the dropdown
+    And I click on Get Verification Code Link
+    And Verify the error message "Please select country or region code"
+
   Scenario: Verify the login with Non Existing Number
     Given I click on my ride link from the dropdown
     Given I select country code as "+91"
@@ -94,3 +100,5 @@ Feature: Verify The functionalities Login
     And Verify the User is redirected to my rides list page
     And I click on my ride link
     Then Verify the dropdown values as "My Rides, Logout"
+
+

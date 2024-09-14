@@ -23,7 +23,7 @@ public class LoginPage {
       // Login Page
       @FindBy(xpath = "//*[@id=\"page-content\"]//div[@class='modal-title']") private WebElement textTitle;
       public String getTitle() { return Utils.getWebElementText(textTitle);}
-      @FindBy(id = "country-codes-input") private WebElement inputCountryCode;
+      @FindBy(xpath = "country-codes-input") private WebElement inputCountryCode;
       @FindBy(xpath = "//div[@id='country-codes-dropdown']//a[1]") private WebElement textCountryCode;
       public void selectCountryCode(String country_code) throws InterruptedException {
             Thread.sleep(5000);

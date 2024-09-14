@@ -25,7 +25,8 @@ public class ItineraryPage {
             return ItineraryInstance;
       }
 
-      //
+      @FindBy(id = "round-trip") private WebElement radioRoundTrip;
+      public void clickOnRoundTripRadio() { Utils.clickOnElement(radioRoundTrip);}
       @FindBy(id = "passengers-input")
       private WebElement inputPassengerCount;
       public void enterPassengerCount(String value) throws InterruptedException {
@@ -80,19 +81,19 @@ public class ItineraryPage {
       private List<WebElement> inputLocations;
       @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='dropdown']//a[1]")
       private List<WebElement> dropdownLocationName;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//input[@id='date']")
-      private List<WebElement> inputPickupDates;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-calendar']//td[@id='next']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//input[@id='date-time-combo']")
+      private List<WebElement> inputPickupDateTimes;
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-calendar']//td[@id='next']")
       private List<WebElement> btnPickupDateNext;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='time-display']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-time']")
       private List<WebElement> inputPickupTimes;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='time-dropdown']//input[@id='time-hr']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-time']//input[@id='time-hr']")
       private List<WebElement> inputPickupHrs;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='time-dropdown']//input[@id='time-min']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-time']//input[@id='time-min']")
       private List<WebElement> inputPickupMins;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='time-dropdown']//div[@id='am']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-time']//div[@id='am']")
       private List<WebElement> btnPeriodAm;
-      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='time-dropdown']//div[@id='pm']")
+      @FindBy(xpath = "//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-time']//div[@id='pm']")
       private List<WebElement> btnPeriodPm;
 
 
@@ -104,23 +105,23 @@ public class ItineraryPage {
 
       public void selectDate(String year, String month, String day, int index) throws InterruptedException {
             // Click the calendar element at the specified index
-            inputPickupDates.get(index).click();
+            inputPickupDateTimes.get(index).click();
 
             // Construct the expected year-month string
-            String expectedYearMonth = year + "-" + month;
+            String expectedYearMonth = month+" "+year;
             String expectedDay = day;
 
             while (true) {
                   // Find the month and year elements at the specified index
                   WebElement monthYearElement = DriverManager.getDriver().findElement(
-                          By.xpath("(//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-calendar'])[" + (index + 1) + "]//td[@id='cur']")
+                          By.xpath("(//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-calendar'])[" + (index + 1) + "]//td[@id='cur']")
                   );
 //                  System.out.println(monthYearElement.getText());
                   // Check if the desired month and year are present
                   if (monthYearElement.getText().equalsIgnoreCase(expectedYearMonth)) {
                         // Find the day element within the same calendar
                         List<WebElement> dayElements = DriverManager.getDriver().findElements(
-                                By.xpath("(//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-calendar'])[" + (index + 1) + "]//td[@name='date']")
+                                By.xpath("(//div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='date-time-combo-calendar'])[" + (index + 1) + "]//td[@name='date']")
                         );
                         for (WebElement dayElement : dayElements)
                         {
@@ -159,13 +160,13 @@ public class ItineraryPage {
 
                   // Wait for date picker visibility only when necessary
                   if (i < locations.length - 1) {
-                        Utils.waitForVisibility(inputPickupDates.get(i)); // Ensure visibility dynamically
+                        Utils.waitForVisibility(inputPickupDateTimes.get(i)); // Ensure visibility dynamically
 
-                        if (!hours[i].isEmpty() && !minutes[i].isEmpty() && !periods[i].isEmpty()) {
-                              enterTime(hours[i], minutes[i], periods[i], i);
-                        }
                         if (!days[i].isEmpty() && i < months.length && i < years.length) {
                               selectDate(years[i], months[i], days[i], i);
+                        }
+                        if (!hours[i].isEmpty() && !minutes[i].isEmpty() && !periods[i].isEmpty()) {
+                              enterTime(hours[i], minutes[i], periods[i], i);
                         }
                   }
             }
@@ -183,17 +184,20 @@ public class ItineraryPage {
 
       public List<String> getDates() {
             Set<String> uniqueDates = new LinkedHashSet<>();
-            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
-            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("d MMM");
 
-            for (WebElement date : inputPickupDates) {
+            for (WebElement date : inputPickupDateTimes) {
                   String dateValue = date.getAttribute("value");
 
                   // Check if dateValue is not empty and in the expected format
                   if (dateValue != null && !dateValue.isEmpty()) {
                         try {
-                              LocalDate parsedDate = LocalDate.parse(dateValue, inputFormatter);
-                              String formattedDate = parsedDate.format(outputFormatter);
+                              String DateTime = dateValue.split(",")[0];
+                              String[] dateTimeParts = DateTime.split(" ");
+                              String day = dateTimeParts[1];  // Get the day ("21")
+                              String month = dateTimeParts[0];  // Get the month abbreviation ("Sep")
+
+                              // Format the date as "21 Sep"
+                              String formattedDate = day + " " + month;
                               uniqueDates.add(formattedDate);
                         } catch (DateTimeParseException e) {
                               System.out.println("Could not parse date: " + dateValue);
@@ -205,20 +209,20 @@ public class ItineraryPage {
 
       public List<String> getRideDateForEachDay() {
             Set<String> uniqueDates = new LinkedHashSet<>();
-            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
-            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy");
 
-            for (WebElement date : inputPickupDates) {
+            for (WebElement date : inputPickupDateTimes) {
                   String dateValue = date.getAttribute("value").trim();
 
                   // Check if dateValue is not empty and in the expected format
                   if (dateValue != null && !dateValue.isEmpty()) {
                         try {
-                              LocalDate parsedDate = LocalDate.parse(dateValue, inputFormatter);
-                              String formattedDate = parsedDate.format(outputFormatter);
+                              // Extract the date part (e.g., "Sep 21, 2024")
+                              String[] dateTimeParts = dateValue.split(" ");
+                              String formattedDate = dateTimeParts[0] + " " + dateTimeParts[1] +" "+ dateTimeParts[2];
+
                               uniqueDates.add(formattedDate);
                         } catch (DateTimeParseException e) {
-                              System.out.println("Could not parse date: " + dateValue);
+                              System.out.println("Could not parse date: " + dateValue.split(",")[0]);
                         }
                   }
             }
@@ -227,23 +231,22 @@ public class ItineraryPage {
 
       public List<String> getTimes() {
             List<String> Times = new ArrayList<>();
-//            Utils.waitForVisibilityOfElements(inputPickupTimes);
-            for (int i=0; i<inputPickupTimes.size()-1; i++) {
-                  String timeValue = Utils.getWebElementText(inputPickupTimes.get(i));
+            for (WebElement time : inputPickupDateTimes) {
+                  String timeValue = time.getAttribute("value").trim();
 
                   // Check if dateValue is not empty and in the expected format
                   if (timeValue != null && !timeValue.isEmpty()) {
                         try {
-                              String formattedTime = timeValue.replace(" ", "");
-                              Times.add(formattedTime);
+                              String[] dateTimeParts = timeValue.split(" ");
+                              String formattedDate = dateTimeParts[3] + dateTimeParts[4];
+
+                              Times.add(formattedDate);
                         } catch (DateTimeParseException e) {
-                              System.out.println("Could not parse date: " + timeValue);
+                              System.out.println("Could not parse date: " + timeValue.split(" "));
                         }
                   }
-
             }
-
-            return Times;
+            return new ArrayList<>(Times);
       }
 
 
@@ -252,7 +255,7 @@ public class ItineraryPage {
 
             for (int i=0; i<inputLocations.size(); i++)
             {
-                  String date = inputPickupDates.get(i).getAttribute("value").trim();
+                  String date = inputPickupDateTimes.get(i).getAttribute("value").trim();
                   String location = inputLocations.get(i).getAttribute("value").trim();
                   dateToLocationsMap.computeIfAbsent(date, k -> new ArrayList<>()).add(location);
             }

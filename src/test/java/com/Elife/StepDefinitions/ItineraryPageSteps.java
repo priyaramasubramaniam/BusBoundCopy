@@ -24,6 +24,10 @@ import static org.junit.Assert.assertTrue;
 public class ItineraryPageSteps {
 
 
+      @Given("I click on Round trip Radio button")
+      public void iClickOnRoundTripRadioButton() {
+            ItineraryPage.getInstance().clickOnRoundTripRadio();
+      }
       @Given("I set passenger count as {string}")
       public void iSetPassengerCountAs(String passenger_count) throws InterruptedException {
             ItineraryPage.getInstance().enterPassengerCount(passenger_count);
@@ -103,6 +107,10 @@ public class ItineraryPageSteps {
             }
       }
 
+      @And("I get the Ride Dates from Itinerary page")
+      public void iGetTheRideDatesFromItineraryPage() {
+            ScenarioContext.setContext("PICKUP_DATES", ItineraryPage.getInstance().getDates());
+      }
       @Given("I get the Ride Times from Itinerary page")
       public void iGetTheRideTimesFromItineraryPage() {
             ScenarioContext.setContext("PICKUP_TIMES", ItineraryPage.getInstance().getTimes());

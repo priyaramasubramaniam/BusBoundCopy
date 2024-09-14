@@ -135,7 +135,7 @@ public class RideListPage {
             while (true)
             {
                   for(WebElement element : textDateTime) {
-                        String dateString = element.getText().split("·")[0].trim();
+                        String dateString = element.getText().split("-")[0].trim();
                         dateList.add(LocalDateTime.parse(dateString, formatter));
                   }
                   // Check if the next page button is available and clickable
@@ -164,7 +164,7 @@ public class RideListPage {
             while (true) {
                   for (WebElement element : textDateTime) {
                         // Extract the full date and time string
-                        String dateTimeString = element.getText().split("·")[0].trim();
+                        String dateTimeString = element.getText().split("-")[0].trim();
                         dateList.add(LocalDateTime.parse(dateTimeString, formatter));
                   }
 
@@ -194,7 +194,7 @@ public class RideListPage {
             while (true) {
                   for (WebElement element : textDateTime) {
                         // Extract only the date and time part before '·'
-                        String dateString = element.getText().split("·")[0].trim();
+                        String dateString = element.getText().split("-")[0].trim();
                         // Parse the extracted date string
                         LocalDateTime parsedDateTime = LocalDateTime.parse(dateString, formatter);
 
@@ -213,7 +213,6 @@ public class RideListPage {
                   btnNextPage.click();
                   Thread.sleep(3000);  // Add a wait to ensure the page loads properly
             }
-            System.out.println(dateList);  // Print the collected dates for verification
             return true;  // Return true if all date-times are greater than now
       }
 
@@ -223,7 +222,7 @@ public class RideListPage {
 
             while (true) {
                   for (WebElement element : textDateTime) {
-                        String dateString = element.getText().split("·")[0].trim();
+                        String dateString = element.getText().split("-")[0].trim();
                         LocalDateTime parsedDateTime = LocalDateTime.parse(dateString, formatter);
 
                         // Check if parsed date-time is before the current time
@@ -243,8 +242,6 @@ public class RideListPage {
                   btnNextPage.click();
                   Thread.sleep(3000);  // Add a wait to ensure the page loads properly
             }
-
-            System.out.println(dateList);  // Print the collected dates for verification
             return true;  // Return true if all date-times are less than now
       }
 

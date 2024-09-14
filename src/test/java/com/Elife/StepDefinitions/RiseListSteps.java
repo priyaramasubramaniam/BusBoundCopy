@@ -63,6 +63,10 @@ public class RiseListSteps {
             ScenarioContext.setContext("RidePartnerName", RideListPage.getInstance().getRideIdLinkText());
             ScenarioContext.getContext("RidPartnerName");
       }
+      @And("I click on the ride link")
+      public void iClickOnTheRideLink() {
+            RideListPage.getInstance().clickOnRideIdLink();
+      }
 
       @And("I get the status of the ride in Rid List page")
       public void iGetTheStatusOfTheRideInRidListPage() {

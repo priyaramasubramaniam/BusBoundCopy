@@ -314,5 +314,6 @@ public class Utils {
             PageFactory.initElements(DriverManager.getDriver(), RideConfirmationPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), LoginPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), RideListPage.getInstance());
+            PageFactory.initElements(DriverManager.getDriver(), QuotesPage.getInstance());
       }
 }

@@ -1,21 +1,22 @@
 Feature: Verify The functionalities Ride List
   Background: This will click on my ride link
     Given I open bus bound url
-#    Then I switch to frame
 
   Scenario: Verify the Past and Future switch button is present in the Ride List page
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
     And I verify the Future and Past switch should be displayed in Ride List page
 
-  Scenario: Verify the Ride is redirected to right Right confirmation page
+  Scenario: Verify the Future Ride is redirected to right Right confirmation page
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -24,10 +25,25 @@ Feature: Verify The functionalities Ride List
     And I switch to Ride Confirmation Page
     Then Verify the url of the Ride Confirmation page
 
+  Scenario: Verify the Past Ride is redirected to right Right confirmation page
+    Given I click on my ride link
+    Then I click on my ride link from the dropdown
+    When I select country code as "USA"
+    When I enter cell number as "1234567890"
+    And I click on Get Verification Code Link
+    And I click on Service agreement checkbox
+    Then I click on Login button
+    And I click on the past button
+    And I get the partner name of the ride id
+    And I click on the ride link
+    And I switch to Ride Confirmation Page
+    Then Verify the url of the Ride Confirmation page
+
   Scenario: Verify the future rides are in ascending order
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -35,8 +51,9 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify the past rides are in descending order
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -45,8 +62,9 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify the future page contains only 5 records
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -54,8 +72,9 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify the past page contains only 5 records
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "+91"
-    When I enter cell number as "9750359643"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -64,8 +83,9 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify the future rides dates are greater than now
     Given I click on my ride link
-    When I select country code as "USA"
-    When I enter cell number as "1234567890"
+    Then I click on my ride link from the dropdown
+    When I select country code as "+91"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -73,8 +93,9 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify the past rides dates are lesser than now
     Given I click on my ride link
-    When I select country code as "USA"
-    When I enter cell number as "1234567890"
+    Then I click on my ride link from the dropdown
+    When I select country code as "+91"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button
@@ -83,6 +104,7 @@ Feature: Verify The functionalities Ride List
 
   Scenario: Verify More link is displayed in the Ride Confirmation Page
     Given I click on my ride link
+    Then I click on my ride link from the dropdown
     When I select country code as "USA"
     When I enter cell number as "1234567890"
     And I click on Get Verification Code Link
@@ -94,16 +116,17 @@ Feature: Verify The functionalities Ride List
     Then Verify the More link is displayed in Ride confirmation page
 
   Scenario: Verify the Ride Info are updated properly or not
+    Given I switch to frame
     Given I set passenger count as "25"
     When I set luggage count as "18"
     And I click on event type
     And User selects the event type as "Wedding"
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
-      | Location    | SFO        | San francisco, CA, USA     |
+      | Location    | San Jose, CA, USA      | SFO     |
       | Day         | 10         |                         |
-      | Month       | 10         |                         |
-      | Year        | 2024       |                         |
+      | Month       | 02         |                         |
+      | Year        | 2025       |                         |
       | Hour        | 08         |                         |
       | Minute      | 30         |                         |
       | Period      | AM         |                         |
@@ -111,13 +134,17 @@ Feature: Verify The functionalities Ride List
     And I select the vehicle in the vehicle page
     And I get the vehicle info in the vehicle page
     And I click on the next button in the vehicle page
-    Then I click on the next button in the additional info page
+    And I enter name as "priya"
+    And I enter email as "test@elife.com"
+    And I select country code as "+91" in contact form
+    And I enter cell number as "9597945929" in contact form
     And I click on the payment link
     Then I do the payment
     And I get ride info from confirmation page to check it on the Ride List Page
     When I click on my ride link
-    And I select country code as "USA"
-    When I enter cell number as "9750359646"
+    And I click on my ride link from the dropdown
+    And I select country code as "+91"
+    When I enter cell number as "9597945929"
     And I click on Get Verification Code Link
     And I click on Service agreement checkbox
     Then I click on Login button

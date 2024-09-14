@@ -119,26 +119,31 @@ public class RideSummaryPage {
       }
 
       // Vehicle Information
-      @FindBy(xpath = "//div[@id='vehicle-info-section']//p[1]") private WebElement vehicleName;
+      @FindBy(xpath = "//div[@class='vehicle']//p[1]") private WebElement vehicleName;
       public String getVehicleName()
       {
             return Utils.getWebElementText(vehicleName);
       }
-      @FindBy(xpath = "//div[@id='vehicle-info-section']//p[2]") private WebElement vehicleBrand;
+      @FindBy(xpath = "//div[@class='vehicle']//p[2]") private WebElement vehicleBrand;
       public String getVehicleBrand()
       {
             return Utils.getWebElementText(vehicleBrand);
       }
-      @FindBy(xpath = "(//div[@class='vehicle-info-section-capacity']//span[2])[1]") private WebElement vehicleMaxPax;
+      @FindBy(xpath = "(//div[@class='vehicle']//span[2])[1]") private WebElement vehicleMaxPax;
       public String getVehicleMaxPax()
       {
             return Utils.getWebElementText(vehicleMaxPax);
       }
-      @FindBy(xpath = "(//div[@class='vehicle-info-section-capacity']//span[2])[2]") private WebElement vehicleMaxLux;
+      @FindBy(xpath = "(//div[@class='vehicle']//span[2])[2]") private WebElement vehicleMaxLux;
       public String getVehicleMaxLux()
       {
             return Utils.getWebElementText(vehicleMaxLux);
       }
+
+
+      // Pricing Details
+      @FindBy(xpath = "//div[@class='detail']//div[@class='price-section-container']//span[3]") private WebElement textVehiclePrice;
+      public String getVehiclePrice() { return Utils.getWebElementText(textVehiclePrice);}
 
 
       // Contact Information
@@ -203,7 +208,7 @@ public class RideSummaryPage {
       @FindBy(xpath = "/html/body/div/input") private WebElement inputExpiryDate;
       @FindBy(xpath = "/html/body/div/input") private WebElement inputSecurityCode;
       @FindBy(xpath = "//input[contains(@id, 'adyen-checkout-holderName')]") private WebElement inputName;
-      @FindBy(xpath = "/html/body/div[1]/div[3]/div[1]/section[5]/div[2]/div[1]/div[2]/button") private WebElement btnPay;
+      @FindBy(xpath = "//*[@id=\"payment-element\"]/button") private WebElement btnPay;
       @FindBy(xpath = "//iframe[@title='Iframe for card number']") private WebElement iframeCardNumber;
       public void enterPaymentDetails() throws InterruptedException {
             Utils.waitForVisibility(iframeCardNumber);

@@ -34,4 +34,12 @@ public class VehiclePageSteps {
             ScenarioContext.setContext("vehicleMaxPax", VehiclePage.getInstance().getMaxPax());
             ScenarioContext.setContext("vehicleMaxLux", VehiclePage.getInstance().getMaxLux());
       }
+      @And("I get the vehicle price in the vehicle page")
+      public void iGetTheVehiclePriceInTheVehiclePage() {
+            ScenarioContext.setContext("vehiclePrice", VehiclePage.getInstance().getVehiclePrice());
+      }
+
+
+
+
 }

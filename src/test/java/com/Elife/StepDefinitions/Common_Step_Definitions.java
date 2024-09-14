@@ -1,5 +1,6 @@
 package com.Elife.StepDefinitions;
 
+import com.Elife.Utilities.ScenarioContext;
 import com.Elife.Utilities.Utils;
 import com.Elife.Web_Driver_Manager.DriverManager;
 import com.aventstack.extentreports.ExtentTest;
@@ -114,5 +115,9 @@ public class Common_Step_Definitions {
             System.out.println("Blocked num: " + blockedCount);
       }
 
-
+      @Before
+      public void clearScenarioContext()
+      {
+            ScenarioContext.clear();
+      }
 }

@@ -51,8 +51,6 @@ public class VehiclePage {
       {
             return Utils.getWebElementText(textMaxLux);
       }
-
-
       @FindBy(xpath = "//div[@class='vehicle-item vehicle-item-selected']//div[@class='vehicle-num']//span")
       private WebElement textVehicleNumber;
       public String getVehicleNumber()
@@ -69,8 +67,16 @@ public class VehiclePage {
       private WebElement textVehicleBrand;
       public String getVehicleBrand()
       {
-            System.out.println(Utils.getWebElementText(textVehicleBrand));
             return Utils.getWebElementText(textVehicleBrand);
+      }
+      @FindBy(xpath = "//div[@class='vehicle-item vehicle-item-selected']//div[@class='vehicle-item-amt']//div[2]//div[1]")
+      private WebElement textVehiclePrice;
+      public String getVehiclePrice()
+      {
+            String price = Utils.getWebElementText(textVehiclePrice);
+            String[] values = price.split(" ");
+            return values[1].replace(",","").concat(" ").concat(values[0]);
+
       }
 }
 
