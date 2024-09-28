@@ -26,7 +26,7 @@ public class ItineraryPageSteps {
 
       @Given("I click on Round trip Radio button")
       public void iClickOnRoundTripRadioButton() {
-            ItineraryPage.getInstance().clickOnRoundTripRadio();
+            ItineraryPage.getInstance().clickOnReturnTripCB();
       }
       @Given("I set passenger count as {string}")
       public void iSetPassengerCountAs(String passenger_count) throws InterruptedException {
@@ -93,27 +93,21 @@ public class ItineraryPageSteps {
             ItineraryPage.getInstance().enterTripDetails(locations, years, months, days, hours, minutes, periods);
       }
 
+
       @And("I click on next button in itinerary page")
       public void iClickOnNextButtonInItineraryPage() throws InterruptedException {
-            ItineraryPage.getInstance().clickOnNextBtn();
             Thread.sleep(3000);
             ItineraryPage.getInstance().clickOnNextBtn();
+            Thread.sleep(3000);
+//            ItineraryPage.getInstance().clickOnNextBtn();
       }
+
 
       @And("the user adds {int} stops")
       public void theUserAddsStops(int StopsCount) {
             for (int i = 0; i < StopsCount; i++) {
                   ItineraryPage.getInstance().addStops();
             }
-      }
-
-      @And("I get the Ride Dates from Itinerary page")
-      public void iGetTheRideDatesFromItineraryPage() {
-            ScenarioContext.setContext("PICKUP_DATES", ItineraryPage.getInstance().getDates());
-      }
-      @Given("I get the Ride Times from Itinerary page")
-      public void iGetTheRideTimesFromItineraryPage() {
-            ScenarioContext.setContext("PICKUP_TIMES", ItineraryPage.getInstance().getTimes());
       }
 
 

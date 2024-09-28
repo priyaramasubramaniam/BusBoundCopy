@@ -9,21 +9,25 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 import javax.lang.model.type.UnionType;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class RiseListSteps {
 
       @And("I verify the Future and Past switch should be displayed in Ride List page")
       public void iVerifyTheFutureAndPastSwitchShouldBeDisplayedInRideListPage() {
-            Assert.assertTrue(RideListPage.getInstance().isFutureBtnDisplayed());
-            Assert.assertTrue(RideListPage.getInstance().isBtnPastDisplayed());
+            assertTrue(RideListPage.getInstance().isFutureBtnDisplayed());
+            assertTrue(RideListPage.getInstance().isBtnPastDisplayed());
       }
 
       String rideID = (String) ScenarioContext.getContext("RideIdRC");
       @And("Get the Ride Id from Ride List and compare it with Ride Confirmation Page")
-      public void getTheRideIdFromRideListAndCompareItWithRideConfirmationPage() {
-            Assert.assertEquals(ScenarioContext.getContext("RideIdRL"), ScenarioContext.getContext("RideIdRC"));
+      public void getTheRideIdFromRideListAndCompareItWithRideConfirmationPage() throws InterruptedException {
+            Assert.assertEquals(RideListPage.getInstance().getRideId(rideID), ScenarioContext.getContext("RideIdRC"));
       }
 
       @And("Verify Ride Status should be {string}")
@@ -33,22 +37,29 @@ public class RiseListSteps {
 
       @And("Get the Vehicle name from Ride List and compare it with Ride Confirmation Page")
       public void getTheVehicleNameFromRideListAndCompareItWithRideConfirmationPage() {
-            Assert.assertEquals(ScenarioContext.getContext("VehicleNameRL"), ScenarioContext.getContext("VehicleNameRC"));
+            Assert.assertEquals(RideListPage.getInstance().getRideVehicleName(rideID), ScenarioContext.getContext("VehicleNameRC"));
       }
 
       @And("Get the Vehicle brand from Ride List and compare it with Ride Confirmation Page")
       public void getTheVehicleBrandFromRideListAndCompareItWithRideConfirmationPage() {
-            Assert.assertEquals(ScenarioContext.getContext("VehicleBrandRL"), ScenarioContext.getContext("VehicleBrandRC"));
+            Assert.assertEquals(RideListPage.getInstance().getRideVehicleBrand(rideID), ScenarioContext.getContext("VehicleBrandRC"));
       }
 
       @And("Get the Ride date and time from Ride List and compare it with Ride Confirmation Page")
       public void getTheRideDateAndTimeFromRideListAndCompareItWithRideConfirmationPage() {
-            Assert.assertEquals(ScenarioContext.getContext("RideDateTimeRC"), ScenarioContext.getContext("RideDateTimeRC"));
+            Assert.assertEquals(RideListPage.getInstance().getRideDateTime(rideID), ScenarioContext.getContext("RideDateTimeRC"));
       }
 
       @And("Get the Locations from Ride List and compare it with Ride Confirmation Page")
       public void getTheLocationsFromRideListAndCompareItWithRideConfirmationPage() {
-            Assert.assertEquals(ScenarioContext.getContext("RideLocationsRL"), ScenarioContext.getContext("FirstLastLocRC"));
+            List<String> rideLocations = RideListPage.getInstance().getRideLocation(rideID);
+            List<String> firstAndLastLocations = (List<String>) ScenarioContext.getContext("FirstLastLocRC");
+
+            // Check if each element in firstAndLastLocations is contained in rideLocations
+            for (String location : firstAndLastLocations) {
+                  assertTrue(rideLocations.contains(location));
+            }
+
       }
 
 
@@ -79,16 +90,16 @@ public class RiseListSteps {
       }
       @And("Verify the future orders are in ascending order")
       public void verifyTheFutureDatesAreInAscendingOrder() throws InterruptedException {
-            Assert.assertEquals(RideListPage.getInstance().isDateInAscendingOrder(), true);
+            Assert.assertEquals(RideListPage.getInstance().isDateInAscendingOrder1(), true);
       }
 
       @When("I click on the past button")
       public void iClickOnThePastButton() {
             RideListPage.getInstance().clickOnPastBtn();
       }
-      @And("Verify the part orders are in ascending order")
-      public void verifyThePartOrdersAreInAscendingOrder() throws InterruptedException {
-            Assert.assertEquals(RideListPage.getInstance().isDateInDescendingOrder(), true);
+      @And("Verify the part orders are in descending order")
+      public void verifyThePartOrdersAreInDescendingOrder() throws InterruptedException {
+            Assert.assertEquals(RideListPage.getInstance().isDateInDescendingOrder1(), true);
       }
 
 
@@ -99,7 +110,6 @@ public class RiseListSteps {
 
       @And("Verify the dates which is greater than now")
       public void verifyTheDatesWhichIsGreaterThanNow() throws InterruptedException {
-            System.out.println(RideListPage.getInstance().isDateGreaterThanNow());
             Assert.assertEquals(RideListPage.getInstance().isDateGreaterThanNow(), true);
       }
 

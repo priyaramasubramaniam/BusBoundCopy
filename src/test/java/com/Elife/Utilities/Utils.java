@@ -55,7 +55,7 @@ public class Utils {
       }
 
       public static void waitForVisibility(WebElement element){
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(30));
             wait.until(ExpectedConditions.visibilityOf(element));
       }
       public static void waitForVisibilityOfElements(List<WebElement> elements){
@@ -299,17 +299,17 @@ public class Utils {
                         break;
                   }
             }
-
             // Switch back to the original window
             DriverManager.getDriver().switchTo().window(originalWindow);
       }
+
+
       public static void initWebElements()
       {
             PageFactory.initElements(DriverManager.getDriver(), HomePage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), ItineraryPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), ContactPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), VehiclePage.getInstance());
-            PageFactory.initElements(DriverManager.getDriver(), AdditionalInfoPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), RideSummaryPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), RideConfirmationPage.getInstance());
             PageFactory.initElements(DriverManager.getDriver(), LoginPage.getInstance());

@@ -2,7 +2,127 @@ Feature: Verify The functionalities Ride Confirmation page
 
   Background: This will run before all scenarios
     Given I open bus bound url
-#    When I switch to frame
+    When I switch to frame
+
+
+  Scenario: Verify Ride info for without stops in Ride Confirmation Page
+    Given I set passenger count as "25"
+    When I set luggage count as "18"
+    And I click on event type
+    And User selects the event type as "Wedding"
+    When the user enters the trip details into the input fields
+      | Field       | Value 1    | Value 4 |
+      | Location    | SFO        | Sacramento, CA, USA     |
+      | Day         | 23         |                         |
+      | Month       | October    |                         |
+      | Year        | 2024       |                         |
+      | Hour        | 08         |                         |
+      | Minute      | 30         |                         |
+      | Period      | AM         |                         |
+    And I get the Ride Dates from Itinerary page
+    And I get the Ride Times from Itinerary page
+    And I click on next button in itinerary page
+    And I select the vehicle in the vehicle page
+    And I get the vehicle info in the vehicle page
+    And I get the vehicle price in the vehicle page
+    And I click on the next button in the vehicle page
+    Then Verify the Ride dates with actual dates
+    And Verify the Ride dates for each days
+    And Verify the Ride Time for each days
+#    And Verify the Ride locations for each days
+    And Verify the vehicle information in ride summary page
+    And Verify the vehicle Service price in ride summary page
+    And I enter name as "priya"
+    And I enter email as "test@elife.com"
+    And I select country code as "+91" in contact form
+    And I enter cell number as "9597945929" in contact form
+    And I click on the payment link
+    And I do the payment
+    Then Verify the Ride dates with actual dates in Confirmation Page
+    And Verify the Ride dates for each days in Confirmation Page
+    And Verify the Ride Time for each days in Confirmation Page
+#    And Verify the Ride locations for each days in Confirmation Page
+    And Verify the vehicle information in in Confirmation Page
+
+
+  Scenario: Verify Ride info for without stops in Ride Confirmation Page
+    Given I set passenger count as "25"
+    When I set luggage count as "18"
+    And I click on event type
+    And User selects the event type as "Wedding"
+    And the user adds 2 stops
+    When the user enters the trip details into the input fields
+      | Field       | Value 1    | Value 2                 | Value 3            |  Value 5 |
+      | Location    | SFO        | San Jose, CA, USA       | San Mateo, CA, USA |  SFO     |
+      | Day         | 1          | 1                       | 1                  |          |
+      | Month       | October    | October                 | October            |          |
+      | Year        | 2024       | 2024                    | 2024               |          |
+      | Hour        | 08         | 12                      | 05                 |          |
+      | Minute      | 30         | 12                      | 25                 |          |
+      | Period      | AM         | PM                      | PM                 |          |
+    And I get the Ride Dates from Itinerary page
+    And I get the Ride Times from Itinerary page
+    And I click on next button in itinerary page
+    And I select the vehicle in the vehicle page
+    And I get the vehicle info in the vehicle page
+    And I get the vehicle price in the vehicle page
+    And I click on the next button in the vehicle page
+    Then Verify the Ride dates with actual dates
+    And Verify the Ride dates for each days
+    And Verify the Ride Time for each days
+#    And Verify the Ride locations for each days
+    And Verify the vehicle information in ride summary page
+    And Verify the vehicle Service price in ride summary page
+    And I enter name as "priya"
+    And I enter email as "test@elife.com"
+    And I select country code as "+91" in contact form
+    And I enter cell number as "9597945929" in contact form
+    And I click on the payment link
+    And I do the payment
+    Then Verify the Ride dates with actual dates in Confirmation Page
+    And Verify the Ride dates for each days in Confirmation Page
+    And Verify the Ride Time for each days in Confirmation Page
+#    And Verify the Ride locations for each days in Confirmation Page
+    And Verify the vehicle information in in Confirmation Page
+
+@1
+  Scenario: Create one way ride with multiple stops with itineraries
+    Given I set passenger count as "25"
+    When I set luggage count as "18"
+    And I click on event type
+    And User selects the event type as "Wedding"
+    And the user adds 3 stops
+    When the user enters the trip details into the input fields
+      | Field       | Value 1    | Value 2                 | Value 3            | Value 4        | Value 5 |
+      | Location    | SFO        | San Jose, CA, USA       | San Mateo, CA, USA | San Cruz, USA  | SFO     |
+      | Day         | 1          | 1                       | 2                  | 3              |         |
+      | Month       | October    | October                 | October            | October        |         |
+      | Year        | 2024       | 2024                    | 2024               | 2024           |         |
+      | Hour        | 08         | 12                      | 05                 | 08             |         |
+      | Minute      | 30         | 12                      | 25                 | 30             |         |
+      | Period      | AM         | PM                      | PM                 | PM             |         |
+    And I get the Ride Times from Itinerary page
+    And I get the Ride Times from Itinerary page
+    And I click on next button in itinerary page
+    And I select the vehicle in the vehicle page
+    And I get the vehicle info in the vehicle page
+    And I get the vehicle price in the vehicle page
+    And I click on the next button in the vehicle page
+    And I enter name as "priya"
+    And I enter email as "test@elife.com"
+    And I select country code as "+91" in contact form
+    And I enter cell number as "9597945929" in contact form
+    And I click on the payment link
+    And I do the payment
+    Then Verify the Ride dates with actual dates in Confirmation Page
+    And Verify the Ride dates for each days in Confirmation Page
+    And Verify the Ride Time for each days in Confirmation Page
+#    And Verify the Ride locations for each days in Confirmation Page
+    And Verify the vehicle information in in Confirmation Page
+
+
+
+
 
   Scenario: Verify the Service Policy table
     Given I set passenger count as "25"
@@ -127,7 +247,7 @@ Feature: Verify The functionalities Ride Confirmation page
     And I click on overtime and additional charge link
     And I get the text of the overtime and Additional charge policy and compare it with expected text file
 
-  @1
+
   Scenario: Verify the Overtime and Additional Charge Text in Ride Confirmation Page after login
     Given I select country code as "+91"
     When I enter cell number as "9750359643"

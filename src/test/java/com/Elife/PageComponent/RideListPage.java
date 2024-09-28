@@ -30,19 +30,22 @@ public class RideListPage {
       @FindBy(className = "title") private WebElement textTitle;
       public String getTitle() { return Utils.getWebElementText(textTitle);}
 
+
+
       // Past and Future Switch Buttons
-      @FindBy(xpath = "//span[@class='switch-text future']") private WebElement btnFuture;
+      @FindBy(id = "futureBtn") private WebElement btnFuture;
       public boolean isFutureBtnDisplayed() { return Utils.checkIfElementIsDisplayed(btnFuture);}
       public void clickOnFutureBtn()
       {
             Utils.clickOnElement(btnFuture);
       }
-      @FindBy(xpath = "//span[@class='switch-text past']") private WebElement btnPast;
+      @FindBy(id = "pastBtn") private WebElement btnPast;
       public boolean isBtnPastDisplayed() { return Utils.checkIfElementIsDisplayed(btnPast);}
       public void clickOnPastBtn()
       {
             Utils.clickOnElement(btnPast);
       }
+
 
       // Ride Data
       @FindBy(xpath = "//*[@id=\"rightArrow\"]") private WebElement btnNextPage;
@@ -119,7 +122,7 @@ public class RideListPage {
             }
             return locations;
       }
-      private String rideAmountXpath = "//div[@class='ride-list-ride-info']//div[contains(text(), '2987607')]//ancestor::a[@class='ride-card']//div[@class='price-section-desktop']//div[@class='ride-price']";
+      private String rideAmountXpath = "//div[@class='ride-list-ride-info']//div[contains(text(), '%s')]//ancestor::a[@class='ride-card']//div[@class='price-section-desktop']//div[@class='ride-price']";
       public String getRideAmount(String dynamicRideId) {
             String formattedXPath = String.format(rideAmountXpath, dynamicRideId);
             return Utils.getWebElementText(DriverManager.getDriver().findElement(By.xpath(formattedXPath)));
@@ -128,63 +131,97 @@ public class RideListPage {
 
       @FindBy(xpath = "//*[@id='rideCardsContainer']//div[@class='location-desktop']//div[@class='local-time']")
       private List<WebElement> textDateTime;
+
       // Verify the rides are in ascending order
-      public boolean isDateInAscendingOrder() throws InterruptedException {
-            List<LocalDateTime> dateList = new ArrayList<>();
+      public boolean isDateInAscendingOrder1() throws InterruptedException {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy, h:mm a");
-            while (true)
-            {
-                  for(WebElement element : textDateTime) {
-                        String dateString = element.getText().split("-")[0].trim();
-                        dateList.add(LocalDateTime.parse(dateString, formatter));
-                  }
-                  // Check if the next page button is available and clickable
-                  if (!btnNextPage.isDisplayed() || !btnNextPage.isEnabled()) {
-                        break;
-                  }
-                  Utils.moveToElement(btnNextPage);
-                  Utils.clickOnElement(btnNextPage);
-                  Thread.sleep(3000);
-
-                  // Verify that the dates are in ascending order
-                  for (int i = 0; i < dateList.size() - 1; i++) {
-                        if (dateList.get(i).isAfter(dateList.get(i + 1))) {
-                              return false;  // Return false if dates are not in ascending order
-                        }
-                  }
-            }
-            System.out.println(dateList);
-            return true;  // Return true if all dates are in ascending order
-      }
-
-      public boolean isDateInDescendingOrder() throws InterruptedException {
-            List<LocalDateTime> dateList = new ArrayList<>();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy, h:mm a");
+            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd, yyyy, h:mm a"); // 12-hour output format
+            LocalDateTime previousDate = null;  // Variable to store the previous date for comparison
 
             while (true) {
-                  for (WebElement element : textDateTime) {
-                        // Extract the full date and time string
-                        String dateTimeString = element.getText().split("-")[0].trim();
-                        dateList.add(LocalDateTime.parse(dateTimeString, formatter));
+                  // Loop through all the dates on the current page
+                  for (int i = 0; i < textDateTime.size() - 1; i++) {
+                        // Get the first date
+                        String firstDateString = textDateTime.get(i).getText().split("-")[0].trim();
+                        LocalDateTime firstDate = LocalDateTime.parse(firstDateString, formatter);
+
+                        // Get the second date
+                        String secondDateString = textDateTime.get(i + 1).getText().split("-")[0].trim();
+                        LocalDateTime secondDate = LocalDateTime.parse(secondDateString, formatter);
+
+                        // Compare first and second date for ascending order
+                        if (firstDate.isAfter(secondDate)) {
+                              System.out.println("Error: " + firstDate.format(outputFormatter) + " should be after " +
+                                      secondDate.format(outputFormatter));
+                              return false;  // Return false if dates are not in ascending order
+                        }
+
+                        // If we're checking dates across multiple pages, compare with the last date from the previous page
+                        if (previousDate != null && previousDate.isAfter(firstDate)) {
+                              System.out.println("Error: " + firstDate + " should be after " + previousDate);
+                              return false;  // Return false if dates across pages are not in ascending order
+                        }
+
+                        // Update previous date to be the last date on the current page
+                        previousDate = secondDate;
+                  }
+                  // Check if the next page button is available and clickable
+                  if (!btnNextPage.isDisplayed() || !btnNextPage.isEnabled()) {
+                        break;  // No more pages to check
+                  }
+
+                  Utils.clickOnElement(btnNextPage);
+                  Thread.sleep(5000);  // Optional: Adjust sleep time based on page loading speed
+            }
+            return true;  // Return true if all dates on all pages are in ascending order
+      }
+
+
+
+
+      public boolean isDateInDescendingOrder1() throws InterruptedException {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy, h:mm a");
+            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd, yyyy, h:mm a"); // 12-hour output format
+            LocalDateTime previousDate = null;  // Variable to store the previous date for comparison
+
+            while (true) {
+                  // Loop through all the dates on the current page
+                  for (int i = 0; i < textDateTime.size() - 1; i++) {
+                        // Get the first date
+                        String firstDateString = textDateTime.get(i).getText().split("-")[0].trim();
+                        LocalDateTime firstDate = LocalDateTime.parse(firstDateString, formatter);
+
+                        // Get the second date
+                        String secondDateString = textDateTime.get(i + 1).getText().split("-")[0].trim();
+                        LocalDateTime secondDate = LocalDateTime.parse(secondDateString, formatter);
+
+                        // Compare first and second date for descending order
+                        if (firstDate.isBefore(secondDate)) {
+                              System.out.println("Error: " + firstDate.format(outputFormatter) + " should be before " +
+                                      secondDate.format(outputFormatter));
+                              return false;  // Return false if dates are not in descending order
+                        }
+
+                        // If we're checking dates across multiple pages, compare with the last date from the previous page
+                        if (previousDate != null && previousDate.isBefore(firstDate)) {
+                              System.out.println("Error: " + firstDate.format(outputFormatter) + " should be before " + previousDate);
+                              return false;  // Return false if dates across pages are not in descending order
+                        }
+
+                        // Update previous date to be the last date on the current page
+                        previousDate = secondDate;
                   }
 
                   // Check if the next page button is available and clickable
                   if (!btnNextPage.isDisplayed() || !btnNextPage.isEnabled()) {
-                        break;
+                        break;  // No more pages to check
                   }
-                  Utils.moveToElement(btnNextPage);
+
                   Utils.clickOnElement(btnNextPage);
-                  Thread.sleep(3000);
+                  Thread.sleep(5000);  // Optional: Adjust sleep time based on page loading speed
             }
 
-            // Verify that the dates are in descending order
-            for (int i = 0; i < dateList.size() - 1; i++) {
-                  if (dateList.get(i).isBefore(dateList.get(i + 1))) {
-                        return false;  // Return false if dates are not in descending order
-                  }
-            }
-            System.out.println(dateList);
-            return true;  // Return true if all dates are in descending order
+            return true;  // Return true if all dates on all pages are in descending order
       }
 
       public boolean isDateGreaterThanNow() throws InterruptedException {

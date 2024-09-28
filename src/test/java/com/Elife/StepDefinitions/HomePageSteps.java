@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,7 @@ public class HomePageSteps {
       public void iClickOnGetAPriceQuoteButton() {
             HomePage.getInstance().clickOnPriceQuoteBtn();
       }
+
       @Given("I click on my ride link")
       public void iClickOnMyRideLink() throws IOException {
             HomePage.getInstance().displayHeader();
@@ -46,5 +48,23 @@ public class HomePageSteps {
       }
 
 
+      @Then("I verify the title of the home page {string}")
+      public void iVerifyTheTitleOfTheHomePage(String title) {
+            Assert.assertEquals(title, HomePage.getInstance().getTitle());
+      }
 
+      @Then("I verify the sub title of the home page {string}")
+      public void iVerifyTheSubTitleOfTheHomePage(String subtitle) {
+            Assert.assertEquals(subtitle, HomePage.getInstance().getSubTitle());
+      }
+
+      @When("I click on the {string} link")
+      public void iClickOnTheLink(String arg0) {
+            HomePage.getInstance().clickOnAddMultipleStopsLink();
+      }
+
+      @Then("I verify the url of the page {string}")
+      public void iVerifyTheUrlOfThePage(String URL) {
+            Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), URL);
+      }
 }

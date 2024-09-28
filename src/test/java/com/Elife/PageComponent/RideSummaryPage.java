@@ -28,7 +28,6 @@ public class RideSummaryPage {
       }
 
       // Common Methods
-      // Hide Header
       @FindBy(xpath = "//div[@id='date-selection']//button//p[1]") private List<WebElement> btnRideDate;
       @FindBy(xpath = "//div[@id='date-selection']//button//p[2]") private List<WebElement> btnRideMonth;
       public List<String> getRideDates()
@@ -36,6 +35,7 @@ public class RideSummaryPage {
             List<String> RideDates = new ArrayList<>();
 
             for (int i = 0; i < btnRideDate.size(); i++) {
+                  Utils.waitForVisibility(btnRideDate.get(i));
                   Utils.moveToElement(btnRideDate.get(i));
                   RideDates.add(Utils.getWebElementText(btnRideDate.get(i))
                           .concat(" ")
@@ -119,11 +119,10 @@ public class RideSummaryPage {
       }
 
       // Vehicle Information
+      @FindBy(id = "vehicle-image") private WebElement vehicleImageSrc;
+      public String getVehicleImageSrc() { return vehicleImageSrc.getAttribute("src");}
       @FindBy(xpath = "//div[@class='vehicle']//p[1]") private WebElement vehicleName;
-      public String getVehicleName()
-      {
-            return Utils.getWebElementText(vehicleName);
-      }
+      public String getVehicleName() {return Utils.getWebElementText(vehicleName);}
       @FindBy(xpath = "//div[@class='vehicle']//p[2]") private WebElement vehicleBrand;
       public String getVehicleBrand()
       {
@@ -140,10 +139,71 @@ public class RideSummaryPage {
             return Utils.getWebElementText(vehicleMaxLux);
       }
 
+      @FindBy(id = "modify-vehicle-info") private WebElement linkModifyVehicleInfo;
+      public void clickOnModifyVehicleInfoLink(){ Utils.clickOnElement(linkModifyVehicleInfo);}
+
+      // Infant, Booster and Child Seat count
+      @FindBy(xpath = "(//div[@class='vehicle-info-section-capacity'])[2]//span[2]") private WebElement textInfantCount;
+      public String getInfantCount() {
+            String[] count = Utils.getWebElementText(textInfantCount).split(":");
+            return count[1].trim();
+      }
+      @FindBy(xpath = "(//div[@class='vehicle-info-section-capacity'])[2]//span[3]") private WebElement textBoosterCount;
+      public String getBoosterCount() {
+            String[] count = Utils.getWebElementText(textBoosterCount).split(":");
+            return count[1].trim();
+      }
+      @FindBy(xpath = "(//div[@class='vehicle-info-section-capacity'])[2]//span[4]") private WebElement textChildCount;
+      public String getChildCount() {
+            String[] count = Utils.getWebElementText(textChildCount).split(":");
+            return count[1].trim();
+      }
+
 
       // Pricing Details
-      @FindBy(xpath = "//div[@class='detail']//div[@class='price-section-container']//span[3]") private WebElement textVehiclePrice;
-      public String getVehiclePrice() { return Utils.getWebElementText(textVehiclePrice);}
+      @FindBy(xpath = "//div[@id='price-section']//span[text()='Vehicle Service']//following::span[2]") private WebElement textVehiclePrice;
+      public String getVehiclePrice()
+      {
+            String amount = Utils.getWebElementText(textVehiclePrice).split(" ")[0];
+            return amount.trim();
+      }
+      @FindBy(xpath = "//div[@id='total-section']//p[2]") private WebElement textTotalPrice;
+      public String getTotalPrice()
+      {
+            String amount = Utils.getWebElementText(textTotalPrice).split(" ")[0];
+            return amount.trim();
+      }
+      @FindBy(xpath = "//div[@id='price-section']//span[text()='Infant Seat']//following::span[2]") private WebElement textInfantPrice;
+      public String getInfantPrice()
+      {
+            String amount = Utils.getWebElementText(textInfantPrice).split(" ")[0];
+            return amount.trim();
+      }
+      @FindBy(xpath = "//div[@id='price-section']//span[text()='Booster Seat']//following::span[2]") private WebElement textBoosterPrice;
+      public String getBoosterPrice()
+      {
+            String amount = Utils.getWebElementText(textBoosterPrice).split(" ")[0];
+            return amount.trim();
+      }
+      @FindBy(xpath = "//div[@id='price-section']//span[text()='Child Seat']//following::span[2]") private WebElement textChildPrice;
+      public String getChildPrice()
+      {
+            String amount = Utils.getWebElementText(textChildPrice).split(" ")[0];
+            return amount.trim();
+      }
+      @FindBy(xpath = "//div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]") private WebElement textMeetGreetPrice;
+      public String getMeetGreetPrice()
+      {
+            String amount = Utils.getWebElementText(textMeetGreetPrice).split(" ")[0];
+            return amount.trim();
+      }
+
+      public boolean isMeetAndGreetPriceDisplayed() {
+            if (!Utils.checkIfElementIsDisplayed(textMeetGreetPrice)) {
+                  return false;
+            }
+            return true;
+      }
 
 
       // Contact Information
@@ -157,7 +217,8 @@ public class RideSummaryPage {
       {
             Utils.clickOnElement(inputCountryCode1);
             Utils.clickOnElement(textCountryCode1);
-      }@FindBy(xpath = "//*[@id=\"phone-1\"]/div[2]/div[2]/input") private WebElement inputCellNumber1;
+      }
+      @FindBy(xpath = "//*[@id=\"phone-1\"]/div[2]/div[2]/input") private WebElement inputCellNumber1;
       public void enterCellNumber1(String cellNumber)
       {
             Utils.setTextOnElement(inputCellNumber1, cellNumber);
@@ -187,6 +248,20 @@ public class RideSummaryPage {
       public String getCountryCodeErrorMsg() { return Utils.getWebElementText(textCountryCodeErrorMsg);}
       @FindBy(xpath = "//*[@id=\"phone-1\"]/div[3]")  private WebElement textCellNumberErrorMsg;
       public String getCellNumberErrorMsg() { return Utils.getWebElementText(textCellNumberErrorMsg);}
+
+      // Meet and Greet Information Section
+      @FindBy(id = "meet_and_greet_section") private WebElement sectionMeetGreet;
+      public boolean isMeetAndGreetSectionDisplayed()
+      {
+            if (sectionMeetGreet.isDisplayed())
+            {
+                  return true;
+            }
+            else {
+                  return false;
+            }
+      }
+
 
       // Payment Information
       @FindBy(id = "continue-to-payment-btn") private WebElement btnContinueToPayment;
@@ -230,123 +305,10 @@ public class RideSummaryPage {
             Utils.clickOnElement(btnPay);
       }
 
-      // Amount
-      @FindBy(xpath = "//div[contains(@class,'price-section')]//span[text()='Infant Seat']/following-sibling::span[2]")
-      private WebElement textInfantSeatPrice;
-      public String getInfantSeatPrice()
-      {
-            Utils.moveToElement(textInfantSeatPrice);
-            if (textInfantSeatPrice.isDisplayed()) {
-                  String numericPart = textInfantSeatPrice.getText().replaceAll("[^\\d.]", "");
-                  if (!numericPart.isEmpty()) {
-                        return String.valueOf(Double.parseDouble(numericPart));
-                  } else {
-                        throw new NumberFormatException("No valid number found in: " + textInfantSeatPrice.getText());
-                  }
-            } else {
-                  throw new IllegalStateException("Input field for Infant Seat is not displayed.");
-            }
-      }
 
-      public boolean isInfantSeatPriceDisplayed()
-      {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)); // Adjust timeout as needed
-            try {
-                  // Wait for the element to be invisible or not present
-                  wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@class,'price-section')]//span[text()='Infant Seat']/following-sibling::span[2]")));
-                  return true; // Element is not present or invisible
-            } catch (TimeoutException e) {
-                  System.out.println("Element is still visible or present: " + e.getMessage());
-                  return false; // Element is still present when it should not be
-            }
-      }
-      @FindBy(xpath = "//div[contains(@class,'price-section')]//span[text()='Booster Seat']/following-sibling::span[2]")
-      private WebElement textBoosterSeatPrice;
-      public String getBoosterSeatPrice()
-      {
-            Utils.moveToElement(textBoosterSeatPrice);
-            if (textBoosterSeatPrice.isDisplayed()) {
-                  String numericPart = getNumberFromString(textBoosterSeatPrice.getText());
-                  if (!numericPart.isEmpty()) {
-                        return String.valueOf(Double.parseDouble(numericPart));
-                  } else {
-                        throw new NumberFormatException("No valid number found in: " + textBoosterSeatPrice.getText());
-                  }
-            } else {
-                  throw new IllegalStateException("Input field for Booster Seat is not displayed.");
-            }
-      }
-      public boolean isBoosterSeatPriceDisplayed()
-      {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)); // Adjust timeout as needed
-            try {
-                  // Wait for the element to be invisible or not present
-                  wait.until(ExpectedConditions.invisibilityOfElementLocated(By.
-                          xpath("//div[contains(@class,'price-section')]//span[text()='Booster Seat']/following-sibling::span[2]")));
-                  return true; // Element is not present or invisible
-            } catch (TimeoutException e) {
-                  System.out.println("Element is still visible or present: " + e.getMessage());
-                  return false; // Element is still present when it should not be
-            }
-      }
-      @FindBy(xpath = "//div[contains(@class,'price-section')]//span[text()='Child Seat']/following-sibling::span[2]")
-      private WebElement textChildSeatPrice;
-      public String getChildSeatPrice()
-      {
-            Utils.moveToElement(textChildSeatPrice);
-            if (textChildSeatPrice.isDisplayed()) {
-                  String numericPart = getNumberFromString(textChildSeatPrice.getText());
-                  if (!numericPart.isEmpty()) {
-                        return String.valueOf(Double.parseDouble(numericPart));
-                  } else {
-                        throw new NumberFormatException("No valid number found in: " + textChildSeatPrice.getText());
-                  }
-            } else {
-                  throw new IllegalStateException("Input field for Child Seat is not displayed.");
-            }
-      }
-      public boolean isChildSeatPriceDisplayed()
-      {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)); // Adjust timeout as needed
-            try {
-                  // Wait for the element to be invisible or not present
-                  wait.until(ExpectedConditions.invisibilityOfElementLocated(By.
-                          xpath("//div[contains(@class,'price-section')]//span[text()='Child Seat']/following-sibling::span[2]")));
-                  return true; // Element is not present or invisible
-            } catch (TimeoutException e) {
-                  System.out.println("Element is still visible or present: " + e.getMessage());
-                  return false; // Element is still present when it should not be
-            }
-      }
-      @FindBy(xpath = "//div[contains(@class,'price-section')]//span[text()='Meet and Greet']/following-sibling::span[2]")
-      private WebElement textMeetAndGreetPrice;
-      public String getMeetAndGreetPrice()
-      {
-            Utils.moveToElement(textMeetAndGreetPrice);
-            if (textMeetAndGreetPrice.isDisplayed()) {
-                  String numericPart = getNumberFromString(textMeetAndGreetPrice.getText());
-                  if (!numericPart.isEmpty()) {
-                        return String.valueOf(Double.parseDouble(numericPart));
-                  } else {
-                        throw new NumberFormatException("No valid number found in: " + textMeetAndGreetPrice.getText());
-                  }
-            } else {
-                  throw new IllegalStateException("Input field for Meet and Greet is not displayed.");
-            }
-      }
-      public boolean isMeetAndGreetPriceDisplayed()
-      {WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)); // Adjust timeout as needed
+      // Infant, Booster and Child Seat count
 
-            try {
-                  // Wait for the element to be invisible or not present
-                  wait.until(ExpectedConditions.invisibilityOfElementLocated(By.
-                          xpath("//div[contains(@class,'price-section')]//span[text()='Meet and Greet']/following-sibling::span[2]")));
-                  return true; // Element is not present or invisible
-            } catch (TimeoutException e) {
-                  System.out.println("Element is still visible or present: " + e.getMessage());
-                  return false; // Element is still present when it should not be
-            }
-      }
+
 
 
 

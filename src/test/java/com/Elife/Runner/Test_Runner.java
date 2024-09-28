@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features/RideCreation.feature",
+        features = "src/test/resources/Features/RideSummary.feature",
         glue = "com.Elife.StepDefinitions",
         dryRun = false,
         tags = "@1",

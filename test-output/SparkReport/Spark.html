@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Extent</title>
+<title>BusBound Cucumber Report</title>
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
 <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
@@ -32,10 +32,10 @@
 </ul>
 <ul class="nav-right">
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Automation Report</span></a>
+<a href="#"><span class="badge badge-primary">BusBound Cucumber Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 14, 2024 11:47:57 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 27, 2024 01:50:29 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -71,7 +76,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -85,25 +90,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Verify The functionalities of One way ride</p>
+            <p class="name">Verify The functionalities Ride Summary</p>
             <p class="text-sm">
-              <span>11:47:58 PM</span> / <span>00:00:48:543</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>1:50:31 AM</span> / <span>00:01:41:826</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Verify The functionalities of One way ride</h5>
-<span class='badge badge-success'>09.14.2024 11:47:58 PM</span>
-<span class='badge badge-danger'>09.14.2024 11:48:46 PM</span>
-<span class='badge badge-default'>00:00:48:543</span>
+<h5 class="test-status text-fail">Verify The functionalities Ride Summary</h5>
+<span class='badge badge-success'>09.27.2024 1:50:31 AM</span>
+<span class='badge badge-danger'>09.27.2024 1:52:13 AM</span>
+<span class='badge badge-default'>00:01:41:826</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,10 +120,13 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify contact form is displayed when the vehicle is not available</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
               <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iOpenBusBoundUrl()">
                 <span>Given I open bus bound url</span>
@@ -126,49 +134,146 @@
       </div>
               </div>
               <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iSwitchToFrame()">
-                <span>When I switch to frame</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iSetPassengerCountAs(java.lang.String)">
-                <span>Given I set passenger count as "25"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iSetLuggageCountAs(java.lang.String)">
-                <span>When I set luggage count as "18"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnEventType()">
-                <span>And I click on event type</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.userSelectsTheEventTypeAs(java.lang.String)">
-                <span>And User selects the event type as "Wedding"</span>
+                <span>And I switch to frame</span>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.theUserEntersTheTripDetailsIntoTheInputFields(io.cucumber.datatable.DataTable)">
                 <span>When the user enters the trip details into the input fields</span>
-      <div><table class='markup-table table '><tr><td>Field</td><td>Value 1</td><td>Value 4</td></tr><tr><td>Location</td><td>Chennai International Airport, Chennai</td><td>Chennai, Tamil Nadu, India</td></tr><tr><td>Day</td><td>23</td><td></td></tr><tr><td>Month</td><td>October</td><td></td></tr><tr><td>Year</td><td>2024</td><td></td></tr><tr><td>Hour</td><td>08</td><td></td></tr><tr><td>Minute</td><td>30</td><td></td></tr><tr><td>Period</td><td>AM</td><td></td></tr></table>
+      <div><table class='markup-table table '><tr><td>Field</td><td>Value 1</td><td>Value 4</td></tr><tr><td>Location</td><td>SFO</td><td>Sacramento, CA, USA</td></tr><tr><td>Day</td><td>23</td><td></td></tr><tr><td>Month</td><td>October</td><td></td></tr><tr><td>Year</td><td>2024</td><td></td></tr><tr><td>Hour</td><td>08</td><td></td></tr><tr><td>Minute</td><td>30</td><td></td></tr><tr><td>Period</td><td>AM</td><td></td></tr></table>
       </div>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnNextButtonInItineraryPage()">
-                <span>And I click on next button in itinerary page</span>
+                <span>When I click on next button in itinerary page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.QuotesPageSteps.verifyTheTitleOfTheQuotePageAs(java.lang.String)">
-                <span>Then Verify the title of the quote page as "Get a Price Quote"</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.VehiclePageSteps.iClickOnThePriceBreakdownLink()">
+                <span>And I click on the price breakdown link</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.QuotesPageSteps.verifyTheSubTitleOfTheQuotePageAs(java.lang.String)">
-                <span>Then Verify the sub title of the quote page as "Please fill in your contact information so we can reach out to you and send you the quote."</span>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.VehiclePageSteps.iClickOnTheNextButtonInTheVehiclePage()">
+                <span>And I click on the next button in the vehicle page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iSwitchToFrame()">
+                <span>And I switch to frame</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage()">
+                <span>And Verify the meet and greet price is not displayed in the Ride Summary Page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]' (tried for 40 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.Elife.Utilities.Utils.waitForVisibilitySec(Utils.java:54)
+	at com.Elife.Utilities.Utils.checkIfElementIsDisplayed(Utils.java:71)
+	at com.Elife.PageComponent.RideSummaryPage.isMeetAndGreetPriceDisplayed(RideSummaryPage.java:202)
+	at com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage(RideSummarySteps.java:239)
+	at ✽.Verify the meet and greet price is not displayed in the Ride Summary Page(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideSummary.feature:358)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]"}
+  (Session info: chrome=122.0.6261.95)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'PRIYA', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a908c03fd8203ae98aca2a434c092d04, findElement {using=xpath, value=//div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49946}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49946/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a908c03fd8203ae98aca2a434c092d04
+	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy30.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.Elife.Utilities.Utils.waitForVisibilitySec(Utils.java:54)
+	at com.Elife.Utilities.Utils.checkIfElementIsDisplayed(Utils.java:71)
+	at com.Elife.PageComponent.RideSummaryPage.isMeetAndGreetPriceDisplayed(RideSummaryPage.java:202)
+	at com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage(RideSummarySteps.java:239)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
+      <div>error-screen-1727382131538.png
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -187,10 +292,10 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
 <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
@@ -198,15 +303,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@1</p>
+<p class="name">org.openqa.selenium.TimeoutException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@1</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -217,13 +322,65 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>23:47:58 PM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:51:31 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Verify contact form is displayed when the vehicle is not available</a>
+<a href="#" class="linked" test-id='1' id='19'>And Verify the meet and greet price is not displayed in the Ride Summary Page</a>
 <div class="">
-<span class="badge badge-default">Verify The functionalities of One way ride.Verify contact form is displayed when the vehicle is not available</span>
+<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page.And Verify the meet and greet price is not displayed in the Ride Summary Page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@1</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@1</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:50:31 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</a>
+<div class="">
+<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</span>
 </div>
 </td>
 </tr>
@@ -244,25 +401,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 14, 2024 11:47:57 PM</h3>
+<h3>Sep 27, 2024 01:50:29 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 14, 2024 11:48:46 PM</h3>
+<h3>Sep 27, 2024 01:52:13 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -278,12 +435,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -301,9 +458,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -321,9 +478,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>10</b> steps passed</small></div>
+<div><small data-tooltip='88%'><b>8</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='11%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -340,7 +497,7 @@
 </div></div>
 <script>
 var timeline = {
-"Verify The functionalities of One way ride":48.543
+"Verify The functionalities Ride Summary":101.826
 };
 </script>
 <div class="row">
@@ -351,11 +508,11 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@1</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -366,19 +523,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 10,
-failGrandChild: 0,
+passGrandChild: 8,
+failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,

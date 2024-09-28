@@ -21,6 +21,11 @@ public class HomePage {
             }
             return HomeInstance;
       }
+      // Title
+      @FindBy(id = "ext-title") private WebElement textTitle;
+      public String getTitle() { return Utils.getWebElementText(textTitle);}
+      @FindBy(className = "bus") private WebElement textSubTitle;
+      public String getSubTitle() { return Utils.getWebElementText(textSubTitle).replaceAll("\\s+", " ").trim();}
 
       // Header
       @FindBy(xpath = "//div[@class=\"my-rides-dropdown\"]") private WebElement linkMyRides;
@@ -67,6 +72,13 @@ public class HomePage {
             DriverManager.getDriver().switchTo().defaultContent();
             WebElement overlappingElement = DriverManager.getDriver().findElement(By.xpath("//*[@id=\"header\"]/div/div"));
             ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].style.display='block';", overlappingElement);
+      }
+
+      // Booking Widget
+      @FindBy(id = "add-multiple-stops") private WebElement linkAddMultipleStops;
+      public void clickOnAddMultipleStopsLink()
+      {
+            Utils.clickOnElement(linkAddMultipleStops);
       }
 
 }

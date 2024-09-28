@@ -7,10 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import javax.rmi.CORBA.Util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
+
 
 public class ItineraryPage {
       private static ItineraryPage ItineraryInstance;
@@ -25,8 +27,8 @@ public class ItineraryPage {
             return ItineraryInstance;
       }
 
-      @FindBy(id = "round-trip") private WebElement radioRoundTrip;
-      public void clickOnRoundTripRadio() { Utils.clickOnElement(radioRoundTrip);}
+      @FindBy(id = "return-trip") private WebElement checkBoxReturnTrip;
+      public void clickOnReturnTripCB() { Utils.clickOnElement(checkBoxReturnTrip);}
       @FindBy(id = "passengers-input")
       private WebElement inputPassengerCount;
       public void enterPassengerCount(String value) throws InterruptedException {
@@ -182,6 +184,25 @@ public class ItineraryPage {
             return locations;
       }
 
+
+      public String getFromLocation() { return inputLocations.get(0).getAttribute("value");}
+      public String getToLocation()
+      {
+            boolean isRoundTripNotEnabled = checkBoxReturnTrip.getAttribute("class").contains("unchecked");
+            int index =  isRoundTripNotEnabled ? inputLocations.size() - 1 : inputPickupDateTimes.size() - 2;
+            return inputLocations.get(index).getAttribute("value");
+      }
+      public String getFromDateTime() {
+            return inputPickupDateTimes.get(0).getAttribute("value").replaceFirst("^0", "");}
+
+      public String getToDateTime() {
+            boolean isRoundTripNotEnabled = checkBoxReturnTrip.getAttribute("class").contains("unchecked");
+            int index =  isRoundTripNotEnabled ? inputPickupDateTimes.size() - 1 : inputPickupDateTimes.size() - 2;
+            return inputPickupDateTimes.get(index).getAttribute("value").replaceFirst("^0", "");
+      }
+
+
+
       public List<String> getDates() {
             Set<String> uniqueDates = new LinkedHashSet<>();
 
@@ -229,7 +250,7 @@ public class ItineraryPage {
             return new ArrayList<>(uniqueDates);
       }
 
-      public List<String> getTimes() {
+      public List<String> getRideTimes() {
             List<String> Times = new ArrayList<>();
             for (WebElement time : inputPickupDateTimes) {
                   String timeValue = time.getAttribute("value").trim();

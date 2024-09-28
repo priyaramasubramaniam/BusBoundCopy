@@ -147,18 +147,125 @@ public class RideConfirmationPage {
       @FindBy(xpath = "//div[@id='ride-conf-timeline']//p[@class='ride-time']") private WebElement textStartTime;
       public String getStartTime()
       {
-            return Utils.getWebElementText(textStartTime);
+            return Utils.getWebElementText(textStartTime).replaceFirst("^0", "");
       }
-      @FindBy(xpath = "//*[@id=\"ride-conf-vehicle-info-section\"]/p[1]") private WebElement textVehicleName;
-      public String getVehicleName() {return Utils.getWebElementText(textVehicleName).replace("x ", "x");}
 
-      @FindBy(xpath = "//div[@id='vehicle-info-section']//p[2]") private WebElement textVehicleBrand;
+
+      @FindBy(xpath = "//div[@id='ride-conf-date-selection']//button//p[1]") private List<WebElement> btnRideDate;
+      @FindBy(xpath = "//div[@id='ride-conf-date-selection']//button//p[2]") private List<WebElement> btnRideMonth;
+      public List<String> getRideDates()
+      {
+            List<String> RideDates = new ArrayList<>();
+
+            for (int i = 0; i < btnRideDate.size(); i++) {
+                  Utils.moveToElement(btnRideDate.get(i));
+                  RideDates.add(Utils.getWebElementText(btnRideDate.get(i))
+                          .concat(" ")
+                          .concat(Utils.getWebElementText(btnRideMonth.get(i))));
+            }
+            return RideDates;
+      }
+
+      @FindBy(id = "ride-conf-ride-date") private WebElement textRideDate;
+      public List<String> getRideDateForEachDay() throws InterruptedException {
+            HomePage.getInstance().hideHeader();
+            List<String> RideDates = new ArrayList<>();
+
+            // Iterate through each btnRideDate element starting from the second one
+            for (int i = 0; i < btnRideDate.size(); i++) {
+                  // Check if the current btnRideDate element is displayed
+                  if (btnRideDate.get(i).isDisplayed()) {
+                        // Click on the current btnRideDate element
+                        Utils.moveToElement(btnRideDate.get(i));
+                        btnRideDate.get(i).click();
+
+                        // Add the retrieved text of textRideDate to the list
+                        RideDates.add(Utils.getWebElementText(textRideDate).trim());
+                  }
+            }
+            return RideDates;
+      }
+
+      @FindBy(xpath = "//div[@id='ride-conf-timeline']//p[@class='ride-time']") private List<WebElement> textRideTimes;
+      public List<String> getRideTimes() throws InterruptedException {
+            HomePage.getInstance().hideHeader();
+            List<String> RideTimes = new ArrayList<>();
+
+            // Iterate through each btnRideDate element starting from the second one
+            for (int i = 0; i < btnRideDate.size(); i++) {
+                  for (int j=0; j< textRideTimes.size(); j++)
+                  {
+                        // Check if the current btnRideDate element is displayed
+                        if (btnRideDate.get(i).isDisplayed()) {
+                              // Click on the current btnRideDate element
+                              Utils.focusOnElement(btnRideDate.get(i));
+                              btnRideDate.get(i).click();
+                              // Add the retrieved text of textRideDate to the list
+                              RideTimes.add(Utils.getWebElementText(textRideTimes.get(j)).trim().replace(" ",""));
+                        }
+                  }
+            }
+
+            return RideTimes;
+      }
+
+      @FindBy(xpath = "//div[@id='ride-conf-timeline']//p[@class='ride-locations']") private List<WebElement> textRideLocations;
+      public List<String> getRideLocations() throws InterruptedException {
+            HomePage.getInstance().hideHeader();
+            List<String> allRideLocations = new ArrayList<>();
+
+            // Check if the first element is enabled; if not, click it
+            if (!btnRideDate.get(0).isSelected()) {
+                  btnRideDate.get(0).click();
+            }
+
+            // Retrieve locations for the first ride date
+            for (int j = 0; j < textRideLocations.size(); j++) {
+                  allRideLocations.add(Utils.getWebElementText(textRideLocations.get(j)));
+            }
+
+            // Iterate through each btnRideDate element starting from the second one
+            for (int i = 1; i < btnRideDate.size(); i++) {
+                  if (btnRideDate.get(i).isDisplayed()) {
+                        // Click on the current btnRideDate element
+                        Utils.clickOnElement(btnRideDate.get(i));
+
+                        // Retrieve locations for the current ride date
+                        for (int j = 0; j < textRideLocations.size(); j++) {
+                              allRideLocations.add(Utils.getWebElementText(textRideLocations.get(j)));
+                        }
+                  }
+            }
+            // Optionally, you can remove duplicates if needed
+            // allRideLocations = new ArrayList<>(new LinkedHashSet<>(allRideLocations));
+
+            return allRideLocations;
+      }
+
+      // Vehicle Information
+      @FindBy(xpath = "//div[@id='ride-conf-vehicle-info-section']//p[1]") private WebElement vehicleName;
+      public String getVehicleName()
+      {
+            return Utils.getWebElementText(vehicleName);
+      }
+      @FindBy(xpath = "//div[@id='ride-conf-vehicle-info-section']//p[2]") private WebElement vehicleBrand;
       public String getVehicleBrand()
       {
-            return Utils.getWebElementText(textVehicleBrand);
+            return Utils.getWebElementText(vehicleBrand);
       }
+      @FindBy(xpath = "(//div[@id='ride-conf-vehicle-info-section']//span[2])[1]") private WebElement vehicleMaxPax;
+      public String getVehicleMaxPax()
+      {
+            return Utils.getWebElementText(vehicleMaxPax);
+      }
+      @FindBy(xpath = "(//div[@id='ride-conf-vehicle-info-section']//span[2])[2]") private WebElement vehicleMaxLux;
+      public String getVehicleMaxLux()
+      {
+            return Utils.getWebElementText(vehicleMaxLux);
+      }
+
+
       @FindBy(xpath = "//*[@id=\"ride-conf-date-selection\"]/button") private List<WebElement> btnRideDates;
-      @FindBy(xpath = "//div[@id='ride-conf-timeline']//p[@class='ride-locations']") private List<WebElement> textRideLocations;
 
       public List<String> getFirstAndLastLocation()
       {

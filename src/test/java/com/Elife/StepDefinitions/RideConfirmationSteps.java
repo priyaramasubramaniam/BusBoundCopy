@@ -1,6 +1,8 @@
 package com.Elife.StepDefinitions;
 
+import com.Elife.PageComponent.ItineraryPage;
 import com.Elife.PageComponent.RideConfirmationPage;
+import com.Elife.PageComponent.RideSummaryPage;
 import com.Elife.Utilities.ExcelUtils;
 import com.Elife.Utilities.FileUtils;
 import com.Elife.Utilities.ScenarioContext;
@@ -15,6 +17,49 @@ import java.io.IOException;
 import java.util.List;
 
 public class RideConfirmationSteps {
+
+
+      @Then("Verify the Ride dates with actual dates in Confirmation Page")
+      public void verifyTheRideDatesWithActualDatesInConfirmationPage() {
+            Assert.assertEquals(RideConfirmationPage.getInstance().getRideDates(), ItineraryPage.getInstance().getDates());
+      }
+
+      @And("Verify the Ride dates for each days in Confirmation Page")
+      public void verifyTheRideDatesForEachDaysInConfirmationPage() throws InterruptedException {
+            Assert.assertEquals(ItineraryPage.getInstance().getRideDateForEachDay(), RideConfirmationPage.getInstance().getRideDateForEachDay());
+
+      }
+
+      @And("Verify the Ride Time for each days in Confirmation Page")
+      public void verifyTheRideTimeForEachDaysInConfirmationPage() throws InterruptedException {
+            Assert.assertEquals(ScenarioContext.getContext("PICKUP_TIMES"), RideConfirmationPage.getInstance().getRideTimes());
+      }
+
+      @And("Verify the Ride locations for each days in Confirmation Page")
+      public void verifyTheRideLocationsForEachDaysInConfirmationPage() throws InterruptedException {
+            Assert.assertEquals(RideConfirmationPage.getInstance().getRideLocations(),
+                    ItineraryPage.getInstance().getLocations());
+
+            for (int i = 0; i < RideConfirmationPage.getInstance().getRideLocations().size(); i++) {
+                  Assert.assertEquals(ItineraryPage.getInstance().getLocations().get(i).
+                                  contains(RideConfirmationPage.getInstance().getRideLocations().get(i))
+                          , "Mismatch at index " + i);
+            }
+            Thread.sleep(1000);
+      }
+
+      @And("Verify the vehicle information in in Confirmation Page")
+      public void verifyTheVehicleInformationInInConfirmationPage() {
+//            Assert.assertEquals(RideConfirmationPage.getInstance().getVehicleName(),
+//                    ScenarioContext.getContext("vehicleName"));
+//            Assert.assertEquals(RideConfirmationPage.getInstance().getVehicleBrand(),
+//                    ScenarioContext.getContext("vehicleBrand"));
+            Assert.assertEquals(RideConfirmationPage.getInstance().getVehicleMaxPax(),
+                    ScenarioContext.getContext("vehicleMaxPax"));
+            Assert.assertEquals(RideConfirmationPage.getInstance().getVehicleMaxPax(),
+                    ScenarioContext.getContext("vehicleMaxLux"));
+      }
+
 
       @And("I switch to Ride Confirmation Page")
       public void iSwitchToRideConfirmationPage() throws InterruptedException {
@@ -50,7 +95,7 @@ public class RideConfirmationSteps {
       @And("I get ride info from confirmation page to check it on the Ride List Page")
       public void iGetRideInfoFromConfirmationPageToCheckItOnTheRideListPage() {
             ScenarioContext.setContext("RideIdRC", RideConfirmationPage.getInstance().getRideId());
-            ScenarioContext.setContext("RideDateTimeRC", RideConfirmationPage.getInstance().getStartDate().concat(" 0").
+            ScenarioContext.setContext("RideDateTimeRC", RideConfirmationPage.getInstance().getStartDate().
                     concat(RideConfirmationPage.getInstance().getStartTime()));
             ScenarioContext.setContext("VehicleNameRC", RideConfirmationPage.getInstance().getVehicleName());
 //            ScenarioContext.setContext("VehicleBrandRC", RideConfirmationPage.getInstance().getVehicleBrand());
@@ -192,4 +237,8 @@ public class RideConfirmationSteps {
       }
 
 
+      @And("I click on modify vehicle link in the Ride summary page")
+      public void iClickOnModifyLinkInTheRideSummaryPage() {
+            RideSummaryPage.getInstance().clickOnModifyVehicleInfoLink();
+      }
 }
