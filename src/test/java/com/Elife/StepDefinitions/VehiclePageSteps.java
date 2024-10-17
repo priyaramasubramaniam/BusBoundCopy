@@ -375,8 +375,8 @@ public class VehiclePageSteps {
 
       @Then("Verify the all vehicles are displayed in the price ascending order")
       public void verifyTheAllVehiclesAreDisplayedInThePriceAscendingOrder() throws InterruptedException {
-            System.out.println(VehiclePage.getInstance().getAllVehiclesPrice());
-            System.out.println(VehiclePage.getInstance().isAllVehicleSorted());
+//            System.out.println(VehiclePage.getInstance().getAllVehiclesPrice());
+//            System.out.println(VehiclePage.getInstance().isAllVehicleSorted());
             Assert.assertTrue(VehiclePage.getInstance().isAllVehicleSorted());
       }
 
@@ -396,12 +396,6 @@ public class VehiclePageSteps {
       @When("the user applies the seating capacity filter for {string}")
       public void theUserAppliesTheSeatingCapacityFilterFor(String capacity) {
             VehiclePage.getInstance().clickOnSeatCapacityCB(capacity);
-      }
-
-      @When("I click on apply button in the vehicle page")
-      public void iClickOnApplyButtonInTheVehiclePage() throws InterruptedException {
-            VehiclePage.getInstance().clickOnApplyFilterLink();
-            Thread.sleep(5000);
       }
 
       @Then("only vehicles with seating capacity {int} to {int} are displayed")
@@ -430,53 +424,6 @@ public class VehiclePageSteps {
             Assert.assertEquals(VehiclePage.getInstance().areVehiclePricesAreInExpRangeInAllSections(min_price, max_price), true);
       }
 
-
-
-
-      @Given("I select {string} for the Meet & Greet sign")
-      public void iSelectForTheMeetGreetSign(String arg0) {
-      }
-
-
-
-      @And("I select {string} for the child seat")
-      public void iSelectForTheChildSeat(String arg0) {
-      }
-
-      @And("I set the quantity {string} for the Infant Seat")
-      public void iSetTheQuantityForTheInfantSeat(String arg0) {
-      }
-
-
-
-      @And("I set the quantity {string} for the Booster Seat")
-      public void iSetTheQuantityForTheBoosterSeat(String arg0) {
-      }
-
-      @And("I get the price of the booster seat")
-      public void iGetThePriceOfTheBoosterSeat() {
-      }
-
-      @And("I set the quantity {string} for the Child Seat")
-      public void iSetTheQuantityForTheChildSeat(String arg0) {
-      }
-
-      @And("I get the price of the child seat seat")
-      public void iGetThePriceOfTheChildSeatSeat() {
-      }
-
-      @Then("I click on the next button in the additional info page")
-      public void iClickOnTheNextButtonInTheAdditionalInfoPage() {
-      }
-
-
-      @And("I get the vehicle info in the vehicle page")
-      public void iGetTheVehicleInfoInTheVehiclePage() {
-      }
-
-      @And("Verify the vehicle information in ride summary page")
-      public void verifyTheVehicleInformationInRideSummaryPage() {
-      }
 
 
 

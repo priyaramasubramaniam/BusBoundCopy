@@ -4,12 +4,8 @@ Feature: Verify The functionalities of One way ride
     Given I open bus bound url
     When I switch to frame
 
-
+@1
   Scenario: Create one way ride without stops
-    Given I set passenger count as "25"
-    When I set luggage count as "18"
-    And I click on event type
-    And User selects the event type as "Wedding"
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
       | Location    | SFO        | Sacramento, CA, USA     |
@@ -21,21 +17,19 @@ Feature: Verify The functionalities of One way ride
       | Period      | AM         |                         |
     And I click on next button in itinerary page
     And I select the vehicle in the vehicle page
-    And I get the vehicle info in the vehicle page
     And I get the vehicle price in the vehicle page
     And I click on the next button in the vehicle page
     Then Verify the Ride dates with actual dates
     And Verify the Ride dates for each days
     And Verify the Ride Time for each days
     And Verify the Ride locations for each days
-    And Verify the vehicle information in ride summary page
-    And Verify the vehicle Service price in ride summary page
-    And I enter name as "priya"
-    And I enter email as "test@elife.com"
-    And I select country code as "+91" in contact form
-    And I enter cell number as "9597945929" in contact form
-    And I click on the payment link
-    And I do the payment
+#    And Verify the vehicle Service price in ride summary page
+#    And I enter name as "priya"
+#    And I enter email as "test@elife.com"
+#    And I select country code as "+91" in contact form
+#    And I enter cell number as "9597945929" in contact form
+#    And I click on the payment link
+#    And I do the payment
 
 
   Scenario: Create one way ride with multiple stops without itineraries

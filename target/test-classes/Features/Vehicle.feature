@@ -26,7 +26,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 |  Value 4        | Value 5 |
       | Location    | SFO        | San Jose, CA, USA       |  San Cruz, USA  | Santa Rosa, CA, USA|
-      | Day         | 1          | 1                       |  1              |         |
+      | Day         | 23         | 23                      |  23             |         |
       | Month       | October    | October                 |  October        |         |
       | Year        | 2024       | 2024                    |  2024           |         |
       | Hour        | 08         | 12                      |  08             |         |
@@ -47,7 +47,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 |  Value 4        | Value 5 |
       | Location    | SFO        | San Jose, CA, USA       |  San Cruz, USA  | Santa Rosa, CA, USA|
-      | Day         | 1          | 2                       |  3              |         |
+      | Day         | 23         | 24                      |  25             |         |
       | Month       | October    | October                 |  October        |         |
       | Year        | 2024       | 2024                    |  2024           |         |
       | Hour        | 08         | 12                      |  08             |         |
@@ -67,7 +67,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 | Value 5 |
       | Location    | SFO        | San Jose, CA, USA       |  SFO     |
-      | Day         | 1          | 2                       |          |
+      | Day         | 23         | 24                      |          |
       | Month       | October    | October                 |          |
       | Year        | 2024       | 2024                    |          |
       | Hour        | 08         | 12                      |          |
@@ -85,7 +85,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 | Value 5              | Value 4 |
       | Location    | SFO        | San Jose, CA, USA       |  Santa cruz, USA     | SFO     |
-      | Day         | 1          | 2                       |  3                   |         |
+      | Day         | 23         | 24                      |  25                  |         |
       | Month       | October    | October                 | October              |         |
       | Year        | 2024       | 2024                    | 2024                 |         |
       | Hour        | 08         | 12                      | 05                   |         |
@@ -107,7 +107,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 | Value 5              | Value 4 |
       | Location    | SFO        | San Jose, CA, USA       |  Santa cruz, USA     | SFO     |
-      | Day         | 1          | 2                       |  3                   |         |
+      | Day         | 23         | 24                      |  25                  |         |
       | Month       | October    | October                 | October              |         |
       | Year        | 2024       | 2024                    | 2024                 |         |
       | Hour        | 08         | 12                      | 05                   |         |
@@ -129,7 +129,7 @@ Feature: Verify The functionalities of Vehicle page
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 2                 |  Value 4        | Value 5 |
       | Location    | SFO        | San Jose, CA, USA       |  San Cruz, USA  | Santa Rosa, CA, USA     |
-      | Day         | 1          | 1                       |  1              |         |
+      | Day         | 23         | 23                      |  23             |         |
       | Month       | October    | October                 |  October        |         |
       | Year        | 2024       | 2024                    |  2024           |         |
       | Hour        | 08         | 12                      |  08             |         |
@@ -143,6 +143,7 @@ Feature: Verify The functionalities of Vehicle page
     And Verify "Show all itineraries" is changed to "Hide itineraries" after clicking the Show All Itineraries link
 
 #  Verification for Payment breakdown
+  
   Scenario: Verify the vehicle price is updated in price breakdown section
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -160,7 +161,7 @@ Feature: Verify The functionalities of Vehicle page
     Then Verify vehicle price should be updated in vehicle pricedown section
     Then Verify the Total price is updated properly in vehicle price break down section
 
-
+    
   Scenario Outline: Verify the vehicle price is updated in price breakdown section
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -187,7 +188,6 @@ Feature: Verify The functionalities of Vehicle page
     | 10               |
     | 1                |
 
-
   Scenario: Verify the Meet and Greet is 0 in price breakdown section
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -204,7 +204,6 @@ Feature: Verify The functionalities of Vehicle page
     And I click on the price breakdown link
     Then Verify the meet and greet price is "0.00" when its not selected
     Then Verify the Total price is updated properly in vehicle price break down section
-
 
   Scenario: Verify the Meet and Greet is updated in price breakdown section
     When the user enters the trip details into the input fields
@@ -224,7 +223,6 @@ Feature: Verify The functionalities of Vehicle page
     And I click on meet and greet checkbox
     Then Verify the meet and greet price should be updated when its selected
     Then Verify the Total price is updated properly in vehicle price break down section
-
 
   Scenario: Verify the Meet and Greet is updated after unchecked it in price breakdown section
     When the user enters the trip details into the input fields
@@ -248,7 +246,6 @@ Feature: Verify The functionalities of Vehicle page
     Then Verify the meet and greet price is "0.00" when its not selected
     Then Verify the Total price is updated properly in vehicle price break down section
 
-
   Scenario: Verify the Child Seats price is 0 in price breakdown section
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -265,7 +262,6 @@ Feature: Verify The functionalities of Vehicle page
     And I click on the price breakdown link
     Then Verify the child seat price is "0.00" when its not selected
     Then Verify the Total price is updated properly in vehicle price break down section
-
 
   Scenario Outline: Verify the Child Seat Price is updated in price breakdown section
     When the user enters the trip details into the input fields
@@ -293,7 +289,6 @@ Feature: Verify The functionalities of Vehicle page
       | 2                    | 4                     | 5                   |
       | 1                    | 2                     | 3                   |
       | 10                   | 12                    | 25                  |
-
 
   Scenario Outline: Verify the Child Seat Price is updated for 0 quantity in price breakdown section
     When the user enters the trip details into the input fields
@@ -325,7 +320,6 @@ Feature: Verify The functionalities of Vehicle page
       | infant_seat_quantity | booster_seat_quantity | child_seat_quantity |
       | 2                    | 4                     | 5                   |
 
-
   Scenario Outline: Verify the Child Seat Price is updated after unchecked it in price breakdown section
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -354,8 +348,8 @@ Feature: Verify The functionalities of Vehicle page
       | infant_seat_quantity | booster_seat_quantity | child_seat_quantity |
       | 2                    | 4                     | 5                   |
 
-
   #Vehicle Section
+  
   Scenario: Verify Vehicle are in ascending order of price
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -382,7 +376,6 @@ Feature: Verify The functionalities of Vehicle page
     When I click on next button in itinerary page
     Then Verify the all images are displayed in the vehicle page
 
-
   Scenario Outline: Verify that the seating capacity filter works correctly
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -396,14 +389,12 @@ Feature: Verify The functionalities of Vehicle page
     When I click on next button in itinerary page
     And I click on the All check box
     When the user applies the seating capacity filter for "<capacity>"
-    When I click on apply button in the vehicle page
     Then only vehicles with seating capacity <expectedMinCapacity> to <expectedMaxCapacity> are displayed
     Examples:
       | capacity      | expectedMinCapacity | expectedMaxCapacity |
       | 8-15 Seats    | 8                   | 15                  |
       | 16-36 Seats   | 16                  | 36                  |
       | 37 + Seats    | 37                  | 100                 |
-
 
   Scenario: Verify that the seating capacity filter works correctly for combinations
     When the user enters the trip details into the input fields
@@ -419,19 +410,16 @@ Feature: Verify The functionalities of Vehicle page
     And I click on the All check box
     When the user applies the seating capacity filter for "8-15 Seats"
     When the user applies the seating capacity filter for "16-36 Seats"
-    When I click on apply button in the vehicle page
     Then only vehicles with seating capacity 8 to 36 are displayed
     And I click on the clear all filter link
     And I click on the All check box
     When the user applies the seating capacity filter for "16-36 Seats"
     When the user applies the seating capacity filter for "37 + Seats"
-    When I click on apply button in the vehicle page
     Then only vehicles with seating capacity 16 to 100 are displayed
     And I click on the clear all filter link
     And I click on the All check box
     When the user applies the seating capacity filter for "8-15 Seats"
     When the user applies the seating capacity filter for "37 + Seats"
-    When I click on apply button in the vehicle page
     Then only vehicles with seating capacity 8 to 100 are displayed
 
   Scenario: Verify error message for no vehicles available for expected filter works correctly
@@ -460,10 +448,8 @@ Feature: Verify The functionalities of Vehicle page
       | Minute      | 30         |                         |
       | Period      | AM         |                         |
     When I click on next button in itinerary page
-    And I click on the All check box
     And the user enters a minimum price "<minPrice>"
     And the user enters a maximum price "<maxPrice>"
-    When I click on apply button in the vehicle page
     Then only vehicles with price between <minPrice> to <maxPrice> are displayed
     Examples:
       | minPrice            | maxPrice            |
@@ -472,6 +458,7 @@ Feature: Verify The functionalities of Vehicle page
       | 1001                | 5000                |
 
   # Both price and seat filter
+  
   Scenario Outline: Apply filters for seating capacity and price range
     When the user enters the trip details into the input fields
       | Field       | Value 1    | Value 4 |
@@ -487,10 +474,8 @@ Feature: Verify The functionalities of Vehicle page
     When the user applies the seating capacity filter for "<seatingCapacity>"
     And the user enters a minimum price "<minPrice>"
     And the user enters a maximum price "<maxPrice>"
-    When I click on apply button in the vehicle page
     Then only vehicles with seating capacity <expectedMinCapacity> to <expectedMaxCapacity> are displayed
     Then only vehicles with price between <minPrice> to <maxPrice> are displayed
-
     Examples:
       | seatingCapacity  | minPrice | maxPrice  | expectedMinCapacity | expectedMaxCapacity |
       | All              | 0        | 100       | 8                   | 100                 |

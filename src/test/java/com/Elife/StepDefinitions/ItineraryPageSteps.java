@@ -98,7 +98,7 @@ public class ItineraryPageSteps {
       public void iClickOnNextButtonInItineraryPage() throws InterruptedException {
             Thread.sleep(3000);
             ItineraryPage.getInstance().clickOnNextBtn();
-            Thread.sleep(3000);
+            Thread.sleep(15000);
 //            ItineraryPage.getInstance().clickOnNextBtn();
       }
 

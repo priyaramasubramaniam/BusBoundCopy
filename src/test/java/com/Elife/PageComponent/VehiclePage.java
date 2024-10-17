@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -166,16 +167,17 @@ public class VehiclePage {
 
 
       // Vehicle Information
-      @FindBy(xpath = "//div[@id=\'vehicle-group-lists\']//div[@class=\'vehicle-price\']")
+      @FindBy(xpath = "//div[@id='vehicle-group-lists']//div[@class='vehicle-price-sec1']//div[@class='vehicle-price']")
       private List<WebElement> textVehiclePrices;
 
-      public List<Double> getAllVehiclesPrice()
-      {
-            Utils.waitForVisibilityOfElements(textVehiclePrices);
+      public List<Double> getAllVehiclesPrice() throws InterruptedException {
+            Thread.sleep(5000);
+//            Utils.waitForVisibilityOfElements(textVehiclePrices);
             List<Double> Prices = new ArrayList<>();
             for (WebElement element : textVehiclePrices)
             {
                   String price = Utils.getWebElementText(element);
+                  System.out.println(price);
                   String[] values = price.split(" ");
                   Prices.add(Double.valueOf(values[1].replace(",","")));
             }
@@ -199,7 +201,7 @@ public class VehiclePage {
             return allSorted;  // Return the overall result after checking all groups
       }
 
-      @FindBy(xpath = "//div[@id='vehicle-group-lists']//div[@class='vehicle-item-img']//img")
+      @FindBy(xpath = "//div[@id='vehicle-group-lists']//div[@class='vehicle-img-sec1']//img")
       private List<WebElement> imgVehicles;
 
       public boolean isImgDisplayed()
@@ -228,7 +230,7 @@ public class VehiclePage {
 
 
       // Seating capacity Filter section
-      @FindBy(xpath = "//*[@id=\"clear-all-filters\"]/a") private WebElement linkClearAllFilter;
+      @FindBy(xpath = "//*[@id=\"clear-all-filters1\"]") private WebElement linkClearAllFilter;
       public void clickOnClearAllFilterLink()
       {
             Utils.clickOnElement(linkClearAllFilter);
@@ -245,11 +247,6 @@ public class VehiclePage {
             WebElement exactXpath = DriverManager.getDriver().findElement(By.xpath(formattedXpath));
             Utils.waitForVisibility(exactXpath);
             Utils.clickOnElement(exactXpath);
-      }
-      @FindBy(id = "apply-filter-btn") private WebElement linkApplyFilter;
-      public void clickOnApplyFilterLink()
-      {
-            Utils.clickOnElement(linkApplyFilter);
       }
 
       @FindBy(xpath = "//div[@id='vehicle-group-lists']//div[@class='vehicle-pass-lag-capacity']")
@@ -508,8 +505,8 @@ public class VehiclePage {
       public String expectedMeetAndGreetPrice()
       {
             String price = Utils.getWebElementText(textExpMeetAndGreetPrice);
-            String[] values = price.split(" ");
-            return values[1];
+            String values = price.replaceAll("[^\\d.]", "").trim();
+            return values;
       }
       @FindBy(xpath = "//div[@class='price-breakdown-widget']//span[@id='meet-greet-price-total']")
       private WebElement textMeetAndGreetPriceInPBS;
@@ -525,15 +522,14 @@ public class VehiclePage {
             String price = Utils.getWebElementText(textInfantPrice);
             String[] values = price.split(" ");
             Double amount = (Double.parseDouble(values[1])) * (Double.parseDouble(textInfantQuantity.getText()));
-            return String.valueOf(amount);
-      }
+            return String.format("%.2f", amount);      }
       @FindBy(id = "booster-seat-price") private WebElement textBoosterPrice;
       public String getBoosterPriceInPBS()
       {
             String price = Utils.getWebElementText(textBoosterPrice);
             String[] values = price.split(" ");
             Double amount = (Double.parseDouble(values[1])) * (Double.parseDouble(textBoosterQuantity.getText()));
-            return String.valueOf(amount);
+            return String.format("%.2f", amount);
       }
       @FindBy(id = "child-seat-price") private WebElement textChildPrice;
       public String getChildPriceInPBS()
@@ -541,7 +537,7 @@ public class VehiclePage {
             String price = Utils.getWebElementText(textChildPrice);
             String[] values = price.split(" ");
             Double amount = (Double.parseDouble(values[1])) * (Double.parseDouble(textChildQuantity.getText()));
-            return String.valueOf(amount);
+            return String.format("%.2f", amount);
       }
 
       @FindBy(id = "need-seats") private WebElement checkboxChildSeat;
@@ -704,7 +700,8 @@ public class VehiclePage {
             String totalPrice = Utils.getWebElementText(textTotalPrice);
             String[] parts = totalPrice.split(" ");
             double amount = Double.parseDouble(parts[1]); // Get the numeric part
-            return String.valueOf(amount);
+
+            return String.format("%.2f", amount); // Format to 2 decimal places
       }
 
       public String expectedTotalPriceInPBS()

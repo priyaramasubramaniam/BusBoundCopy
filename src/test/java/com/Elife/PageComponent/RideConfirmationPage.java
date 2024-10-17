@@ -243,6 +243,9 @@ public class RideConfirmationPage {
       }
 
       // Vehicle Information
+      @FindBy(id = "ride-conf-vehicle-image") private WebElement vehicleImageSrc;
+      public String getVehicleImageSrc() { return vehicleImageSrc.getAttribute("src");}
+
       @FindBy(xpath = "//div[@id='ride-conf-vehicle-info-section']//p[1]") private WebElement vehicleName;
       public String getVehicleName()
       {
@@ -263,6 +266,49 @@ public class RideConfirmationPage {
       {
             return Utils.getWebElementText(vehicleMaxLux);
       }
+
+      // Additional Information
+      @FindBy(xpath = "//div[@id='ride-conf-additional-info-section']//p[strong[contains(text(), 'Infant Seat:')]]")
+      private WebElement textInfantSeatCount;
+      public String getInfantSeatCount()
+      {
+            String text = textInfantSeatCount.getText().trim();
+            String infantSeatValue = text.replace("Infant Seat:", "").trim();
+            return infantSeatValue;
+      }
+      @FindBy(xpath = "//div[@id='ride-conf-additional-info-section']//p[strong[contains(text(), 'Child Seat:')]]")
+      private WebElement textChildSeatCount;
+      public String getChildSeatCount()
+      {
+            String text = textChildSeatCount.getText().trim();
+            String childSeatValue = text.replace("Child Seat:", "").trim();
+            return childSeatValue;
+      }
+      @FindBy(xpath = "//div[@id='ride-conf-additional-info-section']//p[strong[contains(text(), 'Booster Seat:')]]")
+      private WebElement textBoosterSeatCount;
+      public String getBoosterSeatCount()
+      {
+            String text = textBoosterSeatCount.getText().trim();
+            String boosterSeatValue = text.replace("Booster Seat:", "").trim();
+            return boosterSeatValue;
+      }
+      @FindBy(xpath = "//div[@id='ride-conf-additional-info-section']//p[strong[contains(text(), 'Meet & Greet Sign:')]]")
+      private WebElement textMeetAndGreet;
+      public String getMeetAndGreetText()
+      {
+            String text = textMeetAndGreet.getText().trim();
+            String meetAndGreetValue = text.replace("Meet & Greet Sign:", "").trim();
+            return meetAndGreetValue;
+      }
+      @FindBy(xpath = "//div[@id='ride-conf-additional-info-section']//p[strong[contains(text(), 'Notes to driver:')]]")
+      private WebElement textNotesToDriver;
+      public String getNotesToDriverText()
+      {
+            String text = textNotesToDriver.getText().trim();
+            String NotesToDriverValue = text.replace("Notes to driver:", "").trim();
+            return NotesToDriverValue;
+      }
+
 
 
       @FindBy(xpath = "//*[@id=\"ride-conf-date-selection\"]/button") private List<WebElement> btnRideDates;

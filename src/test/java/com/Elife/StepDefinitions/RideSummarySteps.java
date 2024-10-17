@@ -15,11 +15,15 @@ import java.util.List;
 public class RideSummarySteps {
       @Then("Verify the Ride dates with actual dates")
       public void verifyTheRideDatesWithActualDates() {
+            System.out.println(ItineraryPage.getInstance().getDates());
+            System.out.println(RideSummaryPage.getInstance().getRideDates());
             Assert.assertEquals(ItineraryPage.getInstance().getDates(), RideSummaryPage.getInstance().getRideDates());
       }
 
       @And("Verify the Ride dates for each days")
       public void verifyTheRideDatesForEachDays() throws InterruptedException {
+            System.out.println(ItineraryPage.getInstance().getRideDateForEachDay());
+            System.out.println(RideSummaryPage.getInstance().getRideDateForEachDay());
             Assert.assertEquals(ItineraryPage.getInstance().getRideDateForEachDay(), RideSummaryPage.getInstance().getRideDateForEachDay());
       }
 
@@ -79,6 +83,11 @@ public class RideSummarySteps {
             RideSummaryPage.getInstance().enterCellNumber1(cell_number);
       }
 
+      @And("I enter special instruction as {string} in ride summary page")
+      public void iEnterSpecialInstructionAsInRideSummaryPage(String text) {
+            RideSummaryPage.getInstance().enterSpecialInstruction(text);
+      }
+
       @Then("Verify the vehicle src in ride summary page")
       public void verifyTheVehicleSrcInRideSummaryPage() {
             Assert.assertEquals(ScenarioContext.getContext("vehicleImageSrc"),
@@ -130,7 +139,7 @@ public class RideSummarySteps {
       @And("I click on the payment link")
       public void iClickOnThePaymentLink() throws InterruptedException {
             RideSummaryPage.getInstance().clickOnPaymentBtn();
-            Utils.implicitWait(50);
+            Utils.implicitWait(5);
       }
 
       @Then("I do the payment")
@@ -238,4 +247,7 @@ public class RideSummarySteps {
       public void verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage() {
             Assert.assertEquals(RideSummaryPage.getInstance().isMeetAndGreetPriceDisplayed(), false);
       }
+
+
+
 }

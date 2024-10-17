@@ -241,4 +241,82 @@ public class RideConfirmationSteps {
       public void iClickOnModifyLinkInTheRideSummaryPage() {
             RideSummaryPage.getInstance().clickOnModifyVehicleInfoLink();
       }
+
+      @Then("Verify the vehicle name in ride confirmation page")
+      public void verifyTheVehicleNameInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("vehicleName"),
+                    RideConfirmationPage.getInstance().getVehicleName());
+      }
+
+      @Then("Verify the vehicle brand in ride confirmation page")
+      public void verifyTheVehicleBrandInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("vehicleBrand"),
+                    RideConfirmationPage.getInstance().getVehicleBrand());
+      }
+
+      @Then("Verify the vehicle max passenger count in ride confirmation page")
+      public void verifyTheVehicleMaxPassengerCountInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("vehicleMaxLux"),
+                    RideConfirmationPage.getInstance().getVehicleMaxPax());
+      }
+
+      @Then("Verify the vehicle max luggage in ride confirmation page")
+      public void verifyTheVehicleMaxLuggageInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("vehicleMaxPax"),
+                    RideConfirmationPage.getInstance().getVehicleMaxLux());
+      }
+
+
+      @Then("Verify the vehicle src in ride confirmation page")
+      public void verifyTheVehicleSrcInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("vehicleImageSrc"),
+                    RideConfirmationPage.getInstance().getVehicleImageSrc());
+      }
+
+      @Then("Verify the meet and greet is {string} displayed in the Ride Confirmation Page")
+      public void verifyTheMeetAndGreetIsDisplayedInTheRideConfirmationPage(String status) {
+            Assert.assertEquals(RideConfirmationPage.getInstance().getMeetAndGreetText(), status);
+
+      }
+
+      @Then("Verify the infant count should be equal to infant count in ride confirmation page")
+      public void verifyTheInfantCountShouldBeEqualToInfantCountInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("infant_count"),
+                    RideConfirmationPage.getInstance().getInfantSeatCount());
+      }
+
+      @Then("Verify the booster count should be equal to booster count in ride confirmation page")
+      public void verifyTheBoosterCountShouldBeEqualToBoosterCountInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("booster_count"),
+                    RideConfirmationPage.getInstance().getBoosterSeatCount());
+      }
+
+      @Then("Verify the child count should be equal to child count in ride confirmation page")
+      public void verifyTheChildCountShouldBeEqualToChildCountInRideConfirmationPage() {
+            Assert.assertEquals(ScenarioContext.getContext("child_count"),
+                    RideConfirmationPage.getInstance().getChildSeatCount());
+      }
+
+      @Then("Verify the infant count should be equal {string} in ride confirmation page")
+      public void verifyTheInfantCountShouldBeEqualInRideConfirmationPage(String count) {
+            Assert.assertEquals(count, RideConfirmationPage.getInstance().getInfantSeatCount());
+      }
+
+      @Then("Verify the booster count should be equal {string} in ride confirmation page")
+      public void verifyTheBoosterCountShouldBeEqualInRideConfirmationPage(String count) {
+            Assert.assertEquals(count, RideConfirmationPage.getInstance().getBoosterSeatCount());
+      }
+
+      @Then("Verify the child count should be equal {string} in ride confirmation page")
+      public void verifyTheChildCountShouldBeEqualInRideConfirmationPage(String count) {
+            Assert.assertEquals(count, RideConfirmationPage.getInstance().getChildSeatCount());
+      }
+
+
+      @Then("Verify Special Instruction is {string} displayed in the Ride Confirmation Page")
+      public void verifySpecialInstructionIsDisplayedInTheRideConfirmationPage(String text) {
+            Assert.assertEquals(text, RideConfirmationPage.getInstance().getNotesToDriverText());
+      }
+
+
 }

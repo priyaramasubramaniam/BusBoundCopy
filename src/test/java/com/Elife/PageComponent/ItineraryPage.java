@@ -219,6 +219,7 @@ public class ItineraryPage {
 
                               // Format the date as "21 Sep"
                               String formattedDate = day + " " + month;
+                              System.out.println(formattedDate);
                               uniqueDates.add(formattedDate);
                         } catch (DateTimeParseException e) {
                               System.out.println("Could not parse date: " + dateValue);
@@ -230,6 +231,7 @@ public class ItineraryPage {
 
       public List<String> getRideDateForEachDay() {
             Set<String> uniqueDates = new LinkedHashSet<>();
+            Utils.implicitWait(5);
 
             for (WebElement date : inputPickupDateTimes) {
                   String dateValue = date.getAttribute("value").trim();
@@ -240,7 +242,6 @@ public class ItineraryPage {
                               // Extract the date part (e.g., "Sep 21, 2024")
                               String[] dateTimeParts = dateValue.split(" ");
                               String formattedDate = dateTimeParts[0] + " " + dateTimeParts[1] +" "+ dateTimeParts[2];
-
                               uniqueDates.add(formattedDate);
                         } catch (DateTimeParseException e) {
                               System.out.println("Could not parse date: " + dateValue.split(",")[0]);

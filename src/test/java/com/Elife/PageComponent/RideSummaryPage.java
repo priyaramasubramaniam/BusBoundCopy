@@ -239,6 +239,13 @@ public class RideSummaryPage {
       @FindBy(xpath = "//*[@id=\"contact-info-section\"]/p[5]") private WebElement textSocialMedia;
       public String getSocialMediaName() { return Utils.getWebElementText(textSocialMedia).split(":")[1].trim();}
 
+      // Special Instruction
+      @FindBy(id = "special-instructions") private WebElement inputSpecialInstructions;
+      public void enterSpecialInstruction(String SI)
+      {
+            Utils.setTextOnElement(inputSpecialInstructions, SI);
+      }
+
       // Error Message for Contact Form
       @FindBy(xpath = "//*[@id=\"name\"]/div[3]") private WebElement textNameErrorMsg;
       public String getNameErrorMsg() { return Utils.getWebElementText(textNameErrorMsg);}

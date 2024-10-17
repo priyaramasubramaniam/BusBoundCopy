@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import javax.rmi.CORBA.Util;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +65,7 @@ public class HomePage {
       {
             //*[@id="header"]/div/div
             DriverManager.getDriver().switchTo().defaultContent();
-            WebElement overlappingElement = DriverManager.getDriver().findElement(By.xpath("//*[@id=\"header\"]/div/div"));
+            WebElement overlappingElement = DriverManager.getDriver().findElement(By.xpath("//*[@class=\"fixed-header\"]"));
             ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].style.display='none';", overlappingElement);
             DriverManager.getDriver().switchTo().frame("front-inc");
       }
@@ -80,5 +82,101 @@ public class HomePage {
       {
             Utils.clickOnElement(linkAddMultipleStops);
       }
+
+      // One way Pickup location
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//input[@class='from-location-input']")
+      private WebElement inputOWPickupLoc;
+      @FindBy(xpath = "//div[@id='from-dropdown-one-way']//a[1]") private WebElement dropdownOWPickupLocName;
+      public void enterOWPickupLoc(String pickup_loc) throws InterruptedException {
+            Utils.setTextOnElement(inputOWPickupLoc, pickup_loc);
+            Thread.sleep(5000);
+            Utils.clickOnElement(dropdownOWPickupLocName);
+      }
+      public String getOWPickupLoc()
+      {
+            return inputOWPickupLoc.getAttribute("value");
+      }
+
+      // One way Drop off Location
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//input[@class='to-location-input']")
+      private WebElement inputOWDropoffLoc;
+      @FindBy(xpath = "//div[@id='to-dropdown-one-way']//a[1]") private WebElement dropdownOWDropoffLocName;
+      public void enterOWDropoffLoc(String dropoff_loc) throws InterruptedException {
+            Utils.setTextOnElement(inputOWDropoffLoc, dropoff_loc);
+            Thread.sleep(5000);
+            Utils.clickOnElement(dropdownOWDropoffLocName);
+      }
+      public String getOWDropoffLoc()
+      {
+            return inputOWDropoffLoc.getAttribute("value");
+      }
+
+      // One way Pickup Date
+      @FindBy(xpath = "//div[@id=\'form-fields-one-way\']//input[@id=\'date-time-combo\']")
+      private WebElement inputOWPickupDate;
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//div[@id='date-time-combo-calendar']//td[@id='cur']")
+      private WebElement textMonthYear;
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//div[@id='date-time-combo-calendar']//td[@id='next']")
+      private WebElement btnNextMonth;
+
+      public void selectOnewayPickupYearMonth(String MonthYear)
+      {
+            Utils.clickOnElement(inputOWPickupDate);
+            while (!textMonthYear.getText().equals(MonthYear)) {
+                  // Click the next button until the correct month-year is displayed
+                  Utils.clickOnElement(btnNextMonth); // Update with the correct locator
+            }
+      }
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//div[@id='date-time-combo-calendar']//tr[@name='week']//td")
+      private List<WebElement> textDates;
+      public void selectOWPickupDate(String date)
+      {
+            for (WebElement dateElement : textDates) {
+                  String dayText = dateElement.getText();
+                  // Check if the text matches the expected day
+                  if (dayText.equals(date)) {
+                        dateElement.click(); // Click on the matching date
+                        break;
+                  }
+            }
+      }
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//div[@id='date-time-combo-time']//input[@id='time-hr']")
+      private WebElement inputPickupHour;
+      public void enterOWPickupHour(String hour) throws InterruptedException {
+            Utils.setTextOnElement(inputPickupHour, hour);
+
+      }
+      @FindBy(xpath = "//div[@id='form-fields-one-way']//div[@id='date-time-combo-time']//input[@id='time-min']")
+      private WebElement inputPickupMinute;
+      public void enterOWPickupMinute(String minute)
+      {
+            Utils.setTextOnElement(inputPickupMinute, minute);
+      }
+      @FindBy(xpath = "(//div[@id='form-fields-one-way']//div[@id='time-ampm'])[1]//div[@id='am']")
+      private WebElement btnPickupAM;
+      @FindBy(xpath = "(//div[@id='form-fields-one-way']//div[@id='time-ampm'])[1]//div[@id='pm']")
+      private WebElement btnPickupPM;
+      public void selectOWPickupPeriod(String period)
+      {
+            // Handle AM/PM period
+            if ("AM".equalsIgnoreCase(period)) {
+                  Utils.clickOnElement(btnPickupAM);
+            } else {
+                  Utils.clickOnElement(btnPickupPM);
+            }
+      }
+
+      public String getPickupDateTime() {
+            return inputOWPickupDate.getAttribute("value").replaceFirst("^0", "");}
+
+      // Event Type
+      @FindBy(xpath = "//div[@id='event-type-one-way']//input[@id='event-type']") private WebElement inputEventType;
+      @FindBy(xpath = "//div[@id='event-type-one-way']//div[@id='event-dropdown-1']//a[1]") private WebElement textEventType;
+      public void selectEventType() throws InterruptedException {
+            hideHeader();
+            Utils.clickOnElement(inputEventType);
+            Utils.clickOnElement(textEventType);
+      }
+
 
 }

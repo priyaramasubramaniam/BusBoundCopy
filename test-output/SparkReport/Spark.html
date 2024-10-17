@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">BusBound Cucumber Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 27, 2024 01:50:29 AM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 17, 2024 01:01:32 AM</span></a>
 </li>
 </ul>
 </div>
@@ -97,7 +97,7 @@
           <div class="test-detail">
             <p class="name">Verify The functionalities Ride Summary</p>
             <p class="text-sm">
-              <span>1:50:31 AM</span> / <span>00:01:41:826</span>
+              <span>1:01:34 AM</span> / <span>00:01:14:907</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -106,9 +106,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Verify The functionalities Ride Summary</h5>
-<span class='badge badge-success'>09.27.2024 1:50:31 AM</span>
-<span class='badge badge-danger'>09.27.2024 1:52:13 AM</span>
-<span class='badge badge-default'>00:01:41:826</span>
+<span class='badge badge-success'>10.17.2024 1:01:34 AM</span>
+<span class='badge badge-danger'>10.17.2024 1:02:49 AM</span>
+<span class='badge badge-default'>00:01:14:907</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,7 +120,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify Ride information for One-way trip with only 2 locations (Without Stops).</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -138,54 +138,23 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.theUserEntersTheTripDetailsIntoTheInputFields(io.cucumber.datatable.DataTable)">
+              <div class="step fail-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.theUserEntersTheTripDetailsIntoTheInputFields(io.cucumber.datatable.DataTable)">
                 <span>When the user enters the trip details into the input fields</span>
-      <div><table class='markup-table table '><tr><td>Field</td><td>Value 1</td><td>Value 4</td></tr><tr><td>Location</td><td>SFO</td><td>Sacramento, CA, USA</td></tr><tr><td>Day</td><td>23</td><td></td></tr><tr><td>Month</td><td>October</td><td></td></tr><tr><td>Year</td><td>2024</td><td></td></tr><tr><td>Hour</td><td>08</td><td></td></tr><tr><td>Minute</td><td>30</td><td></td></tr><tr><td>Period</td><td>AM</td><td></td></tr></table>
+      <div><table class='markup-table table '><tr><td>Field</td><td>Value 1</td><td>Value 4</td></tr><tr><td>Location</td><td>SFO</td><td>Sacramento, CA, USA</td></tr><tr><td>Day</td><td>25</td><td></td></tr><tr><td>Month</td><td>October</td><td></td></tr><tr><td>Year</td><td>2024</td><td></td></tr><tr><td>Hour</td><td>08</td><td></td></tr><tr><td>Minute</td><td>30</td><td></td></tr><tr><td>Period</td><td>AM</td><td></td></tr></table>
       </div>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnNextButtonInItineraryPage()">
-                <span>When I click on next button in itinerary page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.VehiclePageSteps.iClickOnThePriceBreakdownLink()">
-                <span>And I click on the price breakdown link</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.VehiclePageSteps.iClickOnTheNextButtonInTheVehiclePage()">
-                <span>And I click on the next button in the vehicle page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.Elife.StepDefinitions.HomePageSteps.iSwitchToFrame()">
-                <span>And I switch to frame</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage()">
-                <span>And Verify the meet and greet price is not displayed in the Ride Summary Page</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]' (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.Elife.Utilities.Utils.waitForVisibilitySec(Utils.java:54)
-	at com.Elife.Utilities.Utils.checkIfElementIsDisplayed(Utils.java:71)
-	at com.Elife.PageComponent.RideSummaryPage.isMeetAndGreetPriceDisplayed(RideSummaryPage.java:202)
-	at com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage(RideSummarySteps.java:239)
-	at ✽.Verify the meet and greet price is not displayed in the Ride Summary Page(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideSummary.feature:358)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]"}
+        <textarea disabled class="code-block">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: chrome=122.0.6261.95)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'PRIYA', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_362'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a908c03fd8203ae98aca2a434c092d04, findElement {using=xpath, value=//div[@id='price-section']//span[text()='Meet and Greet']//following::span[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49946}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49946/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a908c03fd8203ae98aca2a434c092d04
-	at sun.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+Command: [d2c7e268ef6bc42d6d0e428b34abe746, isElementDisplayed {id=f.68E1FEC96F69EE47D7D8A78D387957E4.d.C76B06C7096266612EB8B6D28B32903A.e.87}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.95, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58964}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58964/devtoo..., se:cdpVersion: 122.0.6261.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d2c7e268ef6bc42d6d0e428b34abe746)] -> xpath: //div[@id='rides']//div[contains(@class,'ride-card')]//div[@id='dropdown']//a[1]]
+Session ID: d2c7e268ef6bc42d6d0e428b34abe746
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
@@ -195,86 +164,57 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy30.isDisplayed(Unknown Source)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:313)
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
 	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at com.Elife.Utilities.Utils.waitForVisibilitySec(Utils.java:54)
-	at com.Elife.Utilities.Utils.checkIfElementIsDisplayed(Utils.java:71)
-	at com.Elife.PageComponent.RideSummaryPage.isMeetAndGreetPriceDisplayed(RideSummaryPage.java:202)
-	at com.Elife.StepDefinitions.RideSummarySteps.verifyTheMeetAndGreetPriceIsNotDisplayedInTheRideSummaryPage(RideSummarySteps.java:239)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148)
-	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146)
-	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+	at com.Elife.Utilities.Utils.waitForVisibility(Utils.java:59)
+	at com.Elife.Utilities.Utils.clickOnElement(Utils.java:96)
+	at com.Elife.PageComponent.ItineraryPage.enterLocation(ItineraryPage.java:105)
+	at com.Elife.PageComponent.ItineraryPage.enterTripDetails(ItineraryPage.java:161)
+	at com.Elife.StepDefinitions.ItineraryPageSteps.theUserEntersTheTripDetailsIntoTheInputFields(ItineraryPageSteps.java:93)
+	at ✽.the user enters the trip details into the input fields(file:///E:/BusBoundApp%20-%20Copy/src/test/resources/Features/RideSummary.feature:18)
 </textarea>
       
       </div>
               </div>
               <div class="step pass-bg" title="AFTER_STEP">
                 <span>com.Elife.StepDefinitions.Common_Step_Definitions.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>error-screen-1727382131538.png
+      <div>error-screen-1729107162268.png
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../embedded1.png' src="../embedded1.png">
     
     </div></div>
 </div>
       <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.ItineraryPageSteps.iClickOnNextButtonInItineraryPage()">
+                <span>When I click on next button in itinerary page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.VehiclePageSteps.iClickOnTheNextButtonInTheVehiclePage()">
+                <span>And I click on the next button in the vehicle page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.RideSummarySteps.verifyTheRideDatesWithActualDates()">
+                <span>Then Verify the Ride dates with actual dates</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.RideSummarySteps.verifyTheRideDatesForEachDays()">
+                <span>And Verify the Ride dates for each days</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.Elife.StepDefinitions.RideSummarySteps.verifyTheRideTimeForEachDays()">
+                <span>And Verify the Ride Time for each days</span>
+      <div>Step skipped
       </div>
               </div>
           </div>
@@ -305,12 +245,12 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="name">org.openqa.selenium.StaleElementReferenceException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.TimeoutException</h4>
+<h4>org.openqa.selenium.StaleElementReferenceException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -324,11 +264,11 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>01:51:31 AM</td>
+<td>01:02:15 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='19'>And Verify the meet and greet price is not displayed in the Ride Summary Page</a>
+<a href="#" class="linked" test-id='1' id='9'>When the user enters the trip details into the input fields</a>
 <div class="">
-<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page.And Verify the meet and greet price is not displayed in the Ride Summary Page</span>
+<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Ride information for One-way trip with only 2 locations (Without Stops)..When the user enters the trip details into the input fields</span>
 </div>
 </td>
 </tr>
@@ -376,11 +316,11 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>01:50:31 AM</td>
+<td>01:01:34 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</a>
+<a href="#" class="linked" test-id='1' id='2'>Verify Ride information for One-way trip with only 2 locations (Without Stops).</a>
 <div class="">
-<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Meet and Greet Price is Not displayed when no meet and greet in Ride Summary page</span>
+<span class="badge badge-default">Verify The functionalities Ride Summary.Verify Ride information for One-way trip with only 2 locations (Without Stops).</span>
 </div>
 </td>
 </tr>
@@ -401,13 +341,13 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 27, 2024 01:50:29 AM</h3>
+<h3>Oct 17, 2024 01:01:32 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 27, 2024 01:52:13 AM</h3>
+<h3>Oct 17, 2024 01:02:49 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -478,10 +418,10 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='88%'><b>8</b> steps passed</small></div>
+<div><small data-tooltip='33%'><b>3</b> steps passed</small></div>
 <div>
 <small data-tooltip='11%'><b>1</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>5</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -497,7 +437,7 @@ Session ID: a908c03fd8203ae98aca2a434c092d04
 </div></div>
 <script>
 var timeline = {
-"Verify The functionalities Ride Summary":101.826
+"Verify The functionalities Ride Summary":74.907
 };
 </script>
 <div class="row">
@@ -534,10 +474,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 8,
+passGrandChild: 3,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 5,
 infoGrandChild: 0,
 eventsCount: 5,
 };
